@@ -1,0 +1,217 @@
+---
+output: html_document
+---
+
+<style>
+.roundBorder {
+  border-radius: 25px;
+  border: 2px solid blue;
+  background: #D6EAF8;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+</style>
+
+
+
+  
+<h1>Before we begin</h1>
+  
+<p>This document will prepare you for the material presenteded this course. At the bottom of the document you will submit your application. Before doing so, please read and complete the following steps.</p>
+
+
+  
+<h2>R and the R Studio environment</h2>
+  
+<p>Our first step is to ensure that you have R <b>and</b> R Studio installed on your computer.</p>
+<ul>
+<li> If you do not have R installed on your computer, visit this link and follow the directions to do so.</li>
+<li> If you do not have R Studio installed on your computer, visit this link and follow the directions to do so.</li>
+<li> If either or both of the programs have never been opened on your computer please do so now.</li>
+</ul>
+<hr>
+<h2>R Studio</h2>
+<p>R Studio is an interface to R that has numerous advantages over using R's built-in interface. More than anything provides an environment that is easy to organize. The R Studio window is divided into four panels, as described in the image below. We will use panel names and functionality considerably throughout this workshop, so please take a moment to familiarize yourself with them.</p>
+<br>
+<img src="rStudio_environment.png" />
+<br>
+<h3>The source panel</h3>
+<p>The source panel is where you will write and run almost all of your code. To execute code, place your cursor on the line of code you would like to run and use the keyboard shortcut CTRL+R (Windows and Linux) or command+R (Mac). To run multipe lines of code at once, use your mouse to select the section of code you would like to run and the keyboard short cut as above. You may also use the latter to execute a subset of a line of code.</p>
+<br>
+
+<div class="roundBorder">
+<h5><b>Vocabulary</b></h5>
+<ul>
+<li><b>Code</b>: Any text written in the Source or console panel</li>
+<li><b>Script</b>: A file that contains all code for a set of operations</li>
+</ul>
+<h5><b>Best management practices</b></h5>
+<ul><li>Any code that you will use more than once should be written and executed in the source panel</li></ul>
+</div>
+
+<br>
+<h3>The workspace panel</h3>
+<p>The workspace panel is where you can view objects and functions in your system memory (Global environment) and your session history. The term <b>object</b> refers to many types of data, ranging from spreadsheet-type data structures to images and map files. <b>Functions</b> are commands that can be used to execute complex or repetitive tasks. We will discuss functions in-depth in this workshop. Your session history provides every line of code that you've used since you opened R (<i>note: You can also choose to save your session history. If so, this will display all saved and current R activities</i>). In addition to viewing, this panel also contains tools for a number of tasks, including tools for important and exporting data and executing code. We will not be using these features in this workshop but you may want to explore them to determine whether you'd like to integrate them into your workflow.
+
+<h3>The console panel</h3>
+<p>Lorem ipsum</p>
+<br>
+<div class="roundBorder">
+<h5><b>Best management practices</b></h5> 
+<p>Any code that you will use only once should be written and executed in the source panel.</p>
+</div>
+<br>
+<h3>The viewer panel</h3>
+<p>Lorem ipsum</p>
+<br>
+<h2>Getting started: Code execution and assigning R objects</h2>
+<p>Let's take a moment to explore some coding. Even if you are entering this workshop with loads of R experience I ask that you complete this section, as it may contain terminology you are unfamiliar with and the beginnings of the R data science workflow that we will develop over the course of this workshop.</p>
+<p>Open R Studio and create a new R <b>script</b> (an R source document) in the Source Pane using the keyboard combination <i>CTRL+SHIFT+N</i> (Windows and Linux. Throughout this document Macs will use command instead of control to execute keybord shortcuts). Even before you begin, it's good to save the script you will be working on. Save the script onto your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
+<br>
+<h3>Running code from the Console panel</h3>
+<p>We'll start by executing a simple line of code. In the <b>Console panel</b>, type `1+1+2` at the command prompt (`>`) and press Enter. R will print your output on the next line. If you are new to R, you may be confused regarding why R printed `[1]` prior to the answer. We will address this mystery in our first lesson.
+
+<ul>
+<li><i><b>Question</b>: Why did you type the code into the <b>Console panel</b> rather than the <b>Source panel</b></i>?</li>
+<li><i><b>Answer</b>: The <b>Console panel</b> is used whenever you do not need to repeat a task.</i></li>
+</ul>
+
+<p>Mathematical operators are similar to that in Excel (e.g., `*` for multiplication and `/` for division). Likewise, R follows the conventional order of operations (i.e., the same order of operations you would find on a scientific calculator or in Microsoft Excel). For example, the mathematical expression:
+
+$$\frac{1+1+2}{3} + \frac{5}{8}$$
+
+Would be written in R as:
+
+```{r, eval=FALSE}
+(1+1+2)/3+5/8 
+```
+
+<p>If you are new to R, please take a moment to explore using R as a calculator.</p>
+
+<h3>Running code from the Source panel</h3>
+<p>Now let's move to the <b>Source panel</b>, where we will be writing almost all of our R code in the future.</p>
+<p>To repeat the above in the <b>Source panel</b>, type `1+1+2` on the first line. The keyboard shortcut CTRL+Enter (Windows/Linux) will execute the line of code that the cursor is on. If your cursor is on a different line, move it with your mouse or arrow keys.</p>
+
+<p>If you are new to R Studio, please take a moment to explore running code from the Source panel. Make sure that you have the keyboard shortcut for running your code in your muscle memory -- you are going to be using it a lot!</p>
+
+<h3>The assignment operator</h3>
+<p>In R, it is often useful to save objects in your global environment by assigning a name to them. Type `hello world` into the <b>Source panel</b> and hit CTRL+R. You should have received the error message: `Error: unexpected symbol in "hello world"`. If you aren't already, you will come to be super annoyed by messages like these. So what did you do wrong?</p>
+
+<p>When you type a word without quotes (which can be single or double), R thinks you are calling an object or function from your environment. The object was undefined, so it produced an error. Try again, this time typing either `'hello world'` or `"hello world"` and running the line.</p>
+
+<p>Now lets define our object. We'll make an object called `helloWorld` using R's assignment operator `<-`. Run the following line of code in R:</p>
+
+```{r eval = FALSE}
+helloWorld <- 'hello world'
+```
+
+<p>You will notice there is no output in the console. If you look in the <b>Environment panel</b>, however, you will see that your <b>Global Environment</b> now contains a "Value" defined as helloWorld. Type `helloWorld` into the Console panel and notice the printed output.</p>
+
+<p><i>But why the heck would you want to assign objects?</i> Assigning objects is useful to avoid repetition and simplifying complex procedures. Let's return to line one (`1+1+2`) modify the text of this line as below:</p>
+
+```{r eval = FALSE}
+simpleAddition <- 1+1+2
+```
+
+<p>You have just created an object with the value of `1+1+2` and the name "simple Addition". You can use the name as a representation of the object. For example, explore the results of the following in the <b>Console panel</b>:</p>
+
+```{r eval = FALSE}
+simpleAddition*4
+
+simpleAddition+2
+
+simpleAddition/3
+```
+<ul>
+<li><i><b>Question</b>: Why would we type assigned objects in the  <b>Source panel</b> rather than the <b>Console panel</b></i>?</li>
+<li><i><b>Answer</b>: The <b>Source panel</b> should used whenever you repeat a task or define an object. The probability that you will forget the name you assigned to an object is high!</i></li>
+</ul>
+
+<div style="background-color:#cccccc; text-align:left; vertical-align: middle; padding: 10px;"> 
+<p><b>Warning</b>!!! If you are new to R, you probably have yet to grasp how powerful assignments are. As most users begin to develop their R skillset, the number of assignments they use grows. What began as a useful tool can end up leading to an inevitable addiction that causes messy, hard-to-read scripts. In this course you will learn how to use assignments effectively and avoid the confusion that over-assignment causes. Here are some hazards to avoid:</p>
+<ul>
+<li><b>Do not use assignments if you don't have to</b>: Only define an object if you truly want to use it in the future. We probably wouldn't really want to assign a name to `1+1+2` in the real world.</li>
+<li><b>Do not add an assignment until you are sure of the object that you've created</b>: Make sure to explore the object prior to assigning a name to it. Assigning a name before testing an object can lead to headaches and unseen errors in your code.</li>
+<li><b>Names matter (namesMatter)</b>: There are a lot of conventions out there for naming objects. The most important thing to avoid is naming an object and forgetting what you named it. The <b>Environment panel</b> can help you remember names (if you keep it clean), but the best practice is to use a consistent naming convention. Best management practices for naming objects are:</li>
+<ol>
+<li>Avoid capitalization whenever possible. Certainly you should not provide a name in all caps. Capitalization, when misused, leads to extra keystrokes without conveying additional information.</li>
+<li>Avoid using punctuation to separate words. For example, `hello_world` is a pain to type. Also, punctuation often conveys meaning that we may not intent. For example, assigning the name `hello.world` should be avoided because we should reserve the use of `.` to specify file types.</li>
+<li>Do use camel case (aka camelCase)! <b>Camel case</b> provides a clear distinction between words while avoiding too many keystrokes or symbols that convey meaning. <b>Camel case</b> is used in multi-word labels in which the first word is all lowercase and the first letter of any additional words is uppercase.</li>
+</ol>
+</ul>
+</div>
+
+<h3>Commenting out script: #comment!</h3>
+
+<p>Good coding practices in most languages means adding plenty of descriptive content so you (and others) know what the script is doing at each point. This is known as adding <b>comments</b> or <b>commenting</b> your code. Comments act as a rudder for you by allowing you to retrace your steps if something goes wrong or remember what you did if you put a task down and return to it later. In R, you add a comment using `#`. R will not evaluate any part of a line that following a hashtag. Try running the following from the <b>Source panel</b> and observe what happens:</p>
+
+```{r eval = FALSE}
+# Adding a comment
+
+1+1+2 # Adding a comment
+```
+
+<p>It is good to add a comment before steps in a code that describes what happens. Make sure that the comments you've added truly describe the process. Your comment should be able to provide a description of what a section of code is doing that outside observers can comprehend. Let's add comments to the lines of code in which we added assignments in the previous section:</p>
+
+```{r eval = FALSE}
+# Practing simple math and adding assignments:
+simpleAddition <- 1+1+2
+
+# Practicing adding an assignment to a computer-nerd phrase:
+helloWorld <- 'hello world'
+```
+
+<div style="background-color:#cccccc; text-align:left; vertical-align: middle; padding: 10px;"> 
+<p><b>Important</b>! Script writing is like any other type of writing in that it is best to take your target audience into consideration when commenting a script. If you are new to R or writing code for someone who is just starting out, your script should be full of comments that explain every potentially confusing process. As you develop your R skills, or are communicating to more advanced R users, you will likely need less commenting. We will cover commenting considerably throughout this course.</p>
+</div>
+
+<h3>The function</h3>
+
+<p><b>Functions</b> are what Hadley Wickham calls the "fundamental building block of R". Functions are a special type of R object that allow you to conduct often lengthy evaluations with limited work. The R environment contains many functions for data management, graphical display, and statistical analysis.</p> 
+
+<p>To run a function, you type the name of the function followed by a set of parentheses enclosing what you want your function to evaluate. For example, perhaps you would like to <b>combine</b> the integers 1, 1, and 2, as above into a single object. The combine function in R is "c". To combine these values you would type:</p>
+
+```{r eval = FALSE}
+# Combine values:
+c(1,1,2)
+```
+
+<p>Some functions are available in base R. Other functions have been written by others and assembled into libraries (or packages) that you can download. These user-built libraries are very powerful and can automate many of the tasks you confront when coding. To download a library, you use the function <b>install.packages</b>. This function evaluates the name of a library, in quotation marks. Let's install two libraries that we will use throughout the course of this workshop. <i>Note: because each package will only be loaded once, complete this process in the Console panel</i>.</p>
+
+```{r eval = FALSE}
+install.packages('tidyverse')
+
+install.packages('RCurl')
+```
+
+<p>Once your library is installed on your computer, it is almost ready to use, but not quite. You have to load the library into your environment. To do so, use the function `library` and provide the name of the library without quotes. <i>Note: library loading should always occur in the Source panel, in case you or someone else needs to use your script in the future. </p>
+
+```{r eval = FALSE}
+# Load libraries:
+library(tidyverse)
+library(RCurl)
+```
+
+<br>
+<div class="roundBorder">
+<h5><b>Best management practices</b></h5> 
+<p>Libraries should be loaded in one of three locations:</p>
+<ul>
+<li>At the top of a given script</li>
+<li>On a source script (to be covered in Lesson one)</li>
+<li>Within a user-created function (to be covered in Lesson three)</li>
+</ul>
+</div>
+<br>
+
+<div style="background-color:#cccccc; text-align:left; vertical-align: middle; padding: 10px;"> 
+<p><b>Warning</b>! In the early stages of learning R, or even later if you have not spent much time learning the language, you will find yourself falling into what I call the "library trap". The library trap works like this:</p> 
+<ol>
+<li>You need to manipulate your data in some way that you are unfamiliar with</li>
+<li>You visit Google or Stack overflow and, reading through the answers, find sets of libraries that do what you want</li>
+<li>You install and load the library and <i>potentially</i> move past the issue</li>
+</ol>
+<p><i>Why is this a problem?</i> Some of the libraries you stumble on will be critical to your current and future workflows. Most of the libraries found in this way will not. This turns scripts into a sloppy patchwork of libraries. It can make code very confusing to follow and lead to unseen errors (if the function does not do exactly what you perceive). If the issue can be solved with Base R or the packages you are currently working with, it will make your code more clear, help you avoid problems, and save you time in the future. In this workshop we will teach you a workflow to examine and remedy R problems using a core set of packages.
+</p>
