@@ -2,120 +2,298 @@
 output: html_document
 ---
 
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 .roundBorder {
   border-radius: 25px;
-  border: 2px solid blue;
+  border: 5px solid #30288C;
   background: #D6EAF8;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
+.roundBorderBlack {
+  border-radius: 25px;
+  border: 10px solid #D3D3D3;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.roundBorderBlackEx {
+  border-radius: 5px;
+  border: 5px solid #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+
+.roundBorderEx {
+  border-radius: 3px;
+  border: 5px solid #30288C;
+  background: #D6EAF8;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-family: "Avenir";
+}
+
+h2 {
+  font-size: 3em;
+  font-family: "Avenir";
+}
+
+h3 {
+  font-size: 2.5em;
+  font-family: "Avenir";
+}
+
+h4 {
+  font-size: 2em;
+  font-family: "Avenir";
+}
+
+h5 {
+  font-size: 125%;
+  font-family: "Avenir";
+}
+
+p {
+  font-size: 125%;
+  font-family: "Avenir";
+}
+
+
+
+ol {
+  font-size: 125%;
+  font-family: "Avenir";
+}
+
+ul {
+  font-size: 125%;
+  font-family: "Avenir";
+}
+
+.tt {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px black;
+}
+
+/* Tooltip text */
+.tt .ttText {
+    visibility: hidden;
+    font-weight: normal;
+    font-size: 18px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    text-align: left;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tt:hover .ttText {
+    visibility: visible;
+}
+
+
+
 </style>
+</head>
 
 
-
-  
 <h1>Before we begin</h1>
   
-<p>This document will prepare you for the material presenteded this course. At the bottom of the document you will submit your application. Before doing so, please read and complete the following steps.</p>
+<p>This document will prepare you for the material presenteded this course. At the bottom of the document you will submit your application. Before doing so, please read and complete the following steps. Even if you are entering this workshop with loads of R experience, please thoroughly read and complete each section of this document, as each section contains terminology you may be unfamiliar with and the beginnings of the R data science workflow that we will develop over the course of this workshop.</p>
+<br>
+<p>Throughout documents of this workshop there are a number of icons and formats to pay special attention to:</p>
+<ul>
+<li><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 100%"></i> Represents sections where user input is necessary.</li>
 
+<li>To simplify the flow of documents and avoid boring advanced users, definitions of vocabulary terms are provided by tooltips in bolded text. If you would like to see the definition of a term, simply hover your mouse over the text (try it 
+  <div class="tt">here
+    <span class="ttText"><b>Tooltip</b>: An element of a user interface that provides information when a user hovers over an item with their mouse pointer.</span>
+  </div>).</li>
+<li>`Gray boxes` are sections that appear exactly as they would in the R environment. You may copy-and-paste these sections directly into R.</li>
+<li><div class = "roundBorderBlackEx">White boxes with a thick gray border and a spy icon (<i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 100%"></i>) provide tips and tricks for users. </div></li>
+<li><div class = "roundBorderEx">Blue boxes provide any hot keys, vocabulary, and best management practices associated with a section. Pay careful attention to the material in blue boxes!</div></li>
+<li><i class="fa fa-ban" aria-hidden="true" style = "font-size: 100%"></i> Are common R practices that should be avoided.
+</ul>
 
-  
+<i>Important! Throughout this workshop we will be using hotkeys. Workshop documents refer to Windows/Linux keyboard mapping. Mac users should use "command" instead of CTRL to execute keyboard shortcuts.</i>
+
+<hr>
+
 <h2>R and the R Studio environment</h2>
   
-<p>Our first step is to ensure that you have R <b>and</b> R Studio installed on your computer.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Our first step is to ensure that you have R and R Studio Desktop installed on your computer.</p>
 <ul>
-<li> If you do not have R installed on your computer, visit this link and follow the directions to do so.</li>
-<li> If you do not have R Studio installed on your computer, visit this link and follow the directions to do so.</li>
-<li> If either or both of the programs have never been opened on your computer please do so now.</li>
+<li> If you do not have R installed on your computer, <a href="https://www.r-project.org/" 
+    target="_blank">
+    <b>visit this link</b>
+  </a> and follow the directions to do so.</li>
+<li> If you do not have R Studio Desktop installed on your computer, <a href="https://www.rstudio.com/products/rstudio/download/"
+    target="_blank">
+    <b>visit this link</b>
+  </a> and follow the directions to do so.</li>
 </ul>
+
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Please ensure that both programs are installed on your computer and open R Studio.</p>
+
 <hr>
-<h2>R Studio</h2>
-<p>R Studio is an interface to R that has numerous advantages over using R's built-in interface. More than anything provides an environment that is easy to organize. The R Studio window is divided into four panels, as described in the image below. We will use panel names and functionality considerably throughout this workshop, so please take a moment to familiarize yourself with them.</p>
+<h2Running code from R Studio</h2>
+<p>R Studio is an interface to R that has numerous advantages over using R's built-in interface. More than anything, R Studio provides an environment that is easy to organize. R Studio is divided into four panels, as described in the image below. We will use panel names and their functionality considerably throughout this workshop, so please take a moment to familiarize yourself with them.</p>
 <br>
 <img src="rStudio_environment.png" />
 <br>
+
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Open R Studio and create a new R <b>script</b> in the source panel using the keyboard combination <i>CTRL+SHIFT+N</i>. Even before you begin writing any <b>code</b>, it's good to save the script you will be working on. Save the script onto your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
+
 <h3>The source panel</h3>
-<p>The source panel is where you will write and run almost all of your code. To execute code, place your cursor on the line of code you would like to run and use the keyboard shortcut CTRL+R (Windows and Linux) or command+R (Mac). To run multipe lines of code at once, use your mouse to select the section of code you would like to run and the keyboard short cut as above. You may also use the latter to execute a subset of a line of code.</p>
+<p>The source panel is where you will write and run any code that will be replicated. Any line of code that needs to be repeated or upon which future lines of code depend must be written here. To execute code from the source panel, place your cursor on the line of code you would like to run and use the keyboard shortcut CTRL+Enter. To run multipe lines of code at once, use your mouse to select the section of code you would like to run and hit CTRL+Enter. </p>
 <br>
 
-<div class="roundBorder">
-<h5><b>Vocabulary</b></h5>
-<ul>
-<li><b>Code</b>: Any text written in the Source or console panel</li>
-<li><b>Script</b>: A file that contains all code for a set of operations</li>
-</ul>
-<h5><b>Best management practices</b></h5>
-<ul><li>Any code that you will use more than once should be written and executed in the source panel</li></ul>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `1+1+2` on the first line of your script in the source panel. Use the keyboard shortcut CTRL+Enter to execute the line of code that the cursor is on.</p>
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type or copy-and-paste the following into the source panel, select the section of code with your mouse, and run the section using CTRL+Enter:</p> 
+
+```{r eval = FALSE}
+1+1+2
+3*5*8
+```
+
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> You may also use your mouse and CTRL+Enter to run a subset of a line of code. Using the section of code that you have already entered into your script, select just `5*8` with your mouse and hit CTRL+Enter to run.</p>
+
+<p><i>Note: Make sure that you have CTRL+Enter in your muscle memory -- you are going to be using it a lot!</i></p> 
+
+<br>
+
+<div class = "roundBorderBlack">
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i>
+ Any code that you will use more than once should be written and executed in the source panel
+</p>
 </div>
 
 <br>
-<h3>The workspace panel</h3>
-<p>The workspace panel is where you can view objects and functions in your system memory (Global environment) and your session history. The term <b>object</b> refers to many types of data, ranging from spreadsheet-type data structures to images and map files. <b>Functions</b> are commands that can be used to execute complex or repetitive tasks. We will discuss functions in-depth in this workshop. Your session history provides every line of code that you've used since you opened R (<i>note: You can also choose to save your session history. If so, this will display all saved and current R activities</i>). In addition to viewing, this panel also contains tools for a number of tasks, including tools for important and exporting data and executing code. We will not be using these features in this workshop but you may want to explore them to determine whether you'd like to integrate them into your workflow.
 
 <h3>The console panel</h3>
 <p>Lorem ipsum</p>
-<br>
-<div class="roundBorder">
-<h5><b>Best management practices</b></h5> 
-<p>Any code that you will use only once should be written and executed in the source panel.</p>
-</div>
-<br>
-<h3>The viewer panel</h3>
-<p>Lorem ipsum</p>
-<br>
-<h2>Getting started: Code execution and assigning R objects</h2>
-<p>Let's take a moment to explore some coding. Even if you are entering this workshop with loads of R experience I ask that you complete this section, as it may contain terminology you are unfamiliar with and the beginnings of the R data science workflow that we will develop over the course of this workshop.</p>
-<p>Open R Studio and create a new R <b>script</b> (an R source document) in the Source Pane using the keyboard combination <i>CTRL+SHIFT+N</i> (Windows and Linux. Throughout this document Macs will use command instead of control to execute keybord shortcuts). Even before you begin, it's good to save the script you will be working on. Save the script onto your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
-<br>
-<h3>Running code from the Console panel</h3>
-<p>We'll start by executing a simple line of code. In the <b>Console panel</b>, type `1+1+2` at the command prompt (`>`) and press Enter. R will print your output on the next line. If you are new to R, you may be confused regarding why R printed `[1]` prior to the answer. We will address this mystery in our first lesson.
 
-<ul>
-<li><i><b>Question</b>: Why did you type the code into the <b>Console panel</b> rather than the <b>Source panel</b></i>?</li>
-<li><i><b>Answer</b>: The <b>Console panel</b> is used whenever you do not need to repeat a task.</i></li>
-</ul>
-
-<p>Mathematical operators are similar to that in Excel (e.g., `*` for multiplication and `/` for division). Likewise, R follows the conventional order of operations (i.e., the same order of operations you would find on a scientific calculator or in Microsoft Excel). For example, the mathematical expression:
+<div class = "roundBorderBlack">
+<br>
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Any code that you will use only once should be written and executed in the console panel</p>
+<hr style = "border: 1px solid #D3D3D3;">
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Mathematical operators are similar to that in Excel (e.g., `*` for multiplication and `/` for division). Likewise, R follows the conventional order of operations (i.e., the same order of operations you would find on a scientific calculator or in Microsoft Excel). For example, the mathematical expression:</p>
 
 $$\frac{1+1+2}{3} + \frac{5}{8}$$
-
 Would be written in R as:
 
 ```{r, eval=FALSE}
 (1+1+2)/3+5/8 
 ```
 
+<br>
+
 <p>If you are new to R, please take a moment to explore using R as a calculator.</p>
+</div>
 
-<h3>Running code from the Source panel</h3>
-<p>Now let's move to the <b>Source panel</b>, where we will be writing almost all of our R code in the future.</p>
-<p>To repeat the above in the <b>Source panel</b>, type `1+1+2` on the first line. The keyboard shortcut CTRL+Enter (Windows/Linux) will execute the line of code that the cursor is on. If your cursor is on a different line, move it with your mouse or arrow keys.</p>
+<br>
 
-<p>If you are new to R Studio, please take a moment to explore running code from the Source panel. Make sure that you have the keyboard shortcut for running your code in your muscle memory -- you are going to be using it a lot!</p>
+<h3>The workspace panel</h3>
 
-<h3>The assignment operator</h3>
-<p>In R, it is often useful to save objects in your global environment by assigning a name to them. Type `hello world` into the <b>Source panel</b> and hit CTRL+R. You should have received the error message: `Error: unexpected symbol in "hello world"`. If you aren't already, you will come to be super annoyed by messages like these. So what did you do wrong?</p>
+<p>When you open R you initiate an <b>R session</b>. An R session is defined by all of the code that you have run and any <b>objects</b> or <b>functions</b> that you've stored in the <b>global environment</b> (i.e., your systems memory). The workspace panel is where you can view your global environment and your <b>session history</b>. In addition to viewing, you can use this panel to save or clean your session history and objects in your global environment. Using these tools can help streamline your R workflow and aid in replication.</p>
 
-<p>When you type a word without quotes (which can be single or double), R thinks you are calling an object or function from your environment. The object was undefined, so it produced an error. Try again, this time typing either `'hello world'` or `"hello world"` and running the line.</p>
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Click on the "History" tab of the workspace panel to view the commands that you have run so far.</p>
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Click on the floppy disk icon on the history tab of the workspace panel. Save your history as "rWorkshop" (the file type will be added automatically). We will build on this file over the course of this workshop.<i>Note: On the "Environment" tab you can save all of the objects and functions in your global environment.</i></p>
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Click on the broom icon on the history tab of the workspace panel. This will remove your everything you've done in R since your session began. <i>Note: On the "Environment" tab you can remove all of the objects and functions in your global environment.</i></p>
+<br>
+<p><i>Note: The workspace panel contains tools for a number of other tasks, including tools for important and exporting data and executing code. We will not be using most of these features in this workshop but you may want to explore them to determine whether you'd like to integrate them into your workflow.</i></p>
+<br>
 
-<p>Now lets define our object. We'll make an object called `helloWorld` using R's assignment operator `<-`. Run the following line of code in R:</p>
+<h3>The viewer panel</h3>
+<p>Lorem ipsum</p>
+
+<div class="roundBorder">
+<p><b>Keyboard shortcuts</b></p>
+<ul>
+<li>CTRL+S: Save file</li>
+<li>CTRL+Shift+N: New R script</li>
+<li>CTRL+Enter: Execute line or section of code from the source panel
+</ul>
+<hr style = "border: 1px solid #30288C;">
+<p><b>Vocabulary</b></p>
+<ul>
+<li><b>Code</b>: Any text written in the Source or console panel</li>
+<li><b>Script</b>: A file that contains all code for a set of operations</li>
+<li><b>Object</b>: One of many types of data stored in R's memory, such as individual values, tables, lists, and images</li>
+<li><b>Function</b>: Commands that can be used to execute complex or repetitive tasks</li>
+</ul>
+<hr style = "border: 1px solid #30288C;">
+<p><b>Best management practices</b></p>
+<ul>
+<li>Any code that you will use more than once should be written and executed in the source panel</li>
+<li>Any code that you will use only once should be written and executed in the console panel</li>
+<li>Be aware of how many objects are stored in your global environment. To limit the amount of data stored in memory and make best use of the workspace panel, be sure to remove unecessary objects.</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>The assignment operator</h2>
+
+<p>In R, it is often useful to save objects in your global environment by <b>assigning</b> a name to them. Assignment allows you to recall saved objects by typing the name rather than recreating the object. This is often necessary, as objects can be quite complex.</p>
+
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `hello world` into the <b>console panel</b> and hit CTRL+Enter.</p>
+
+<p>You should have received the error message: `Error: unexpected symbol in "hello world"`. If you aren't already, you will soon become super annoyed by messages like these. So what did you do wrong? When you type a word without quotes (which can be single or double), R thinks you are calling an object or function from your environment. The object was undefined, so it produced an error.</p> 
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Repeat the above, this time typing either `'hello world'` or `"hello world"` and running the line.</p>
+<br>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Now lets define our object. We'll make an object called `helloWorld` using R's assignment operator `<-`. Run the following line of code in R:</p>
 
 ```{r eval = FALSE}
 helloWorld <- 'hello world'
 ```
 
-<p>You will notice there is no output in the console. If you look in the <b>Environment panel</b>, however, you will see that your <b>Global Environment</b> now contains a "Value" defined as helloWorld. Type `helloWorld` into the Console panel and notice the printed output.</p>
+<p>You will notice there is no output in the console. If you look in the <b>environment panel</b>, however, you will see that your <b>global environment</b> now contains a "Value" defined as helloWorld.</p>
+<br>
 
-<p><i>But why the heck would you want to assign objects?</i> Assigning objects is useful to avoid repetition and simplifying complex procedures. Let's return to line one (`1+1+2`) modify the text of this line as below:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `helloWorld` into the Console panel and notice the printed output.</p>
+<br>
+
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Enter or copy-and-paste the following into your source panel and execute using CTRL+Enter:</p>
 
 ```{r eval = FALSE}
 simpleAddition <- 1+1+2
 ```
+<br>
 
-<p>You have just created an object with the value of `1+1+2` and the name "simple Addition". You can use the name as a representation of the object. For example, explore the results of the following in the <b>Console panel</b>:</p>
+<p>You have just created an object with the value of `1+1+2` and the name "simple Addition". You can use the name as a representation of the object.</p>
+<br>
+
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Explore the results of the object that you created by typing the following in the <b>console panel</b>:</p>
 
 ```{r eval = FALSE}
 simpleAddition*4
@@ -124,10 +302,8 @@ simpleAddition+2
 
 simpleAddition/3
 ```
-<ul>
-<li><i><b>Question</b>: Why would we type assigned objects in the  <b>Source panel</b> rather than the <b>Console panel</b></i>?</li>
-<li><i><b>Answer</b>: The <b>Source panel</b> should used whenever you repeat a task or define an object. The probability that you will forget the name you assigned to an object is high!</i></li>
-</ul>
+
+<p>If you are new to R, you probably have yet to grasp how powerful assignments are. As most users begin to develop their R skillset, the number of assignments they use grows. What began as a useful tool can end up leading to an inevitable addiction that causes messy, hard-to-read scripts. In this course you will learn how to use assignments effectively and avoid the confusion that over-assignment causes.</p>
 
 <div style="background-color:#cccccc; text-align:left; vertical-align: middle; padding: 10px;"> 
 <p><b>Warning</b>!!! If you are new to R, you probably have yet to grasp how powerful assignments are. As most users begin to develop their R skillset, the number of assignments they use grows. What began as a useful tool can end up leading to an inevitable addiction that causes messy, hard-to-read scripts. In this course you will learn how to use assignments effectively and avoid the confusion that over-assignment causes. Here are some hazards to avoid:</p>
@@ -142,8 +318,9 @@ simpleAddition/3
 </ol>
 </ul>
 </div>
+<hr>
 
-<h3>Commenting out script: #comment!</h3>
+<h2>Commenting out script: #comment!</h2>
 
 <p>Good coding practices in most languages means adding plenty of descriptive content so you (and others) know what the script is doing at each point. This is known as adding <b>comments</b> or <b>commenting</b> your code. Comments act as a rudder for you by allowing you to retrace your steps if something goes wrong or remember what you did if you put a task down and return to it later. In R, you add a comment using `#`. R will not evaluate any part of a line that following a hashtag. Try running the following from the <b>Source panel</b> and observe what happens:</p>
 
@@ -167,7 +344,9 @@ helloWorld <- 'hello world'
 <p><b>Important</b>! Script writing is like any other type of writing in that it is best to take your target audience into consideration when commenting a script. If you are new to R or writing code for someone who is just starting out, your script should be full of comments that explain every potentially confusing process. As you develop your R skills, or are communicating to more advanced R users, you will likely need less commenting. We will cover commenting considerably throughout this course.</p>
 </div>
 
-<h3>The function</h3>
+<hr>
+
+<h2>The function</h2>
 
 <p><b>Functions</b> are what Hadley Wickham calls the "fundamental building block of R". Functions are a special type of R object that allow you to conduct often lengthy evaluations with limited work. The R environment contains many functions for data management, graphical display, and statistical analysis.</p> 
 
