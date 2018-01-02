@@ -90,7 +90,9 @@ ul {
 .tt {
     position: relative;
     display: inline-block;
+    class: inline; 
     font-weight: bold;
+    font-family: "Avenir";
     font-size: 18px;
     border-bottom: 1px black;
 }
@@ -101,9 +103,9 @@ ul {
     font-weight: normal;
     font-size: 18px;
     width: 200px;
-    background-color: white;
+    background-color: black;
     border: 1px solid black;
-    color: black;
+    color: white;
     text-align: left;
     padding: 5px;
     border-radius: 6px;
@@ -129,12 +131,12 @@ ul {
 <li><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 100%"></i> Represents sections where user input is necessary.</li>
 
 <li>To simplify the flow of documents and avoid boring advanced users, definitions of vocabulary terms are provided by tooltips in bolded text. If you would like to see the definition of a term, simply hover your mouse over the text (try it 
-  <div class="tt">here
+  <span class="tt">here
     <span class="ttText"><b>Tooltip</b>: An element of a user interface that provides information when a user hovers over an item with their mouse pointer.</span>
-  </div>).</li>
-<li>`Gray boxes` are sections that appear exactly as they would in the R environment. You may copy-and-paste these sections directly into R.</li>
+  </span>).</li>
+<li>`Gray boxes` are sections that appear exactly as they would in the R environment. You may copy-and-paste these sections directly into R (CTRL+C to copy and CTRL+V to paste).</li>
 <li><div class = "roundBorderBlackEx">White boxes with a thick gray border and a spy icon (<i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 100%"></i>) provide tips and tricks for users. </div></li>
-<li><div class = "roundBorderEx">Blue boxes provide any hotkeys, vocabulary, and best management practices associated with a lesson. Pay careful attention to the material in blue boxes!</div></li>
+<li><div class = "roundBorderEx">Blue boxes provide summary information on hotkeys, operators, functions, vocabulary, and best management practices associated with a lesson. Pay careful attention to the material in blue boxes!</div></li>
 </ul>
 
 <i>Important! Throughout this workshop we will be using hotkeys. Workshop documents refer to Windows/Linux keyboard mapping. Mac users should use "command" instead of CTRL to execute keyboard shortcuts.</i>
@@ -166,17 +168,19 @@ ul {
 <img src="rStudio_environment.png" />
 <br>
 <br>
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Open R Studio and create a new R <b>script</b> in the <b>source panel</b> using the keyboard combination <i>CTRL+SHIFT+N</i>. Even before you begin writing any <b>code</b>, it's good to save the script you will be working on. Save the script onto your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Open R Studio and create a new R <span class="tt">script     <span class="ttText">A file that contains all code for a set of operations.</span>   </span> in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> using the keyboard combination <i>CTRL+SHIFT+N</i>. Even before you begin writing any <b>code</b>, it's good to save the script you will be working on. Save the script onto your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
 
 <!-- source panel -->
 
 <h3>The source panel</h3>
-<p>The <b>source panel</b> provides a useful interface for writing and editing code and is a great tool for observing and communicating what you have done. To execute code from the <b>source panel</b>, place your cursor on the line of code you would like to run and use the keyboard shortcut CTRL+Enter. To run multipe lines of code at once, use your mouse to select the section of code you would like to run and hit CTRL+Enter. </p>
+<p>The  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> provides a useful interface for writing and editing code and is a great tool for observing and communicating what you have done. To execute code from the  source panel, place your cursor on the line of code you would like to run and use the keyboard shortcut CTRL+Enter. To run multipe lines of code at once, use your mouse to select the section of code you would like to run and hit CTRL+Enter.</p>
 <br>
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `1+1+2` on the first line of your script in the <b>source panel</b>. Use the keyboard shortcut CTRL+Enter to execute the line of code that the cursor is on.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `1+1+2` on the first line of your script in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>. Use the keyboard shortcut CTRL+Enter to execute the line of code that the cursor is on.</p>
+
 <br>
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type or copy-and-paste the following into the <b>source panel</b>, select the section of code with your mouse, and run the section using CTRL+Enter:</p> 
+
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type or copy-and-paste the following into the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>, select the section of code with your mouse, and run the section using CTRL+Enter:</p> 
 
 ```{r eval = FALSE}
 1+1+2
@@ -184,7 +188,7 @@ ul {
 ```
 
 <br>
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> You may also use your mouse and CTRL+Enter to run a subset of a line of code. Using the section of code that you have already entered into your script, select just `5*8` with your mouse and hit CTRL+Enter to run.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> You may also use your mouse and CTRL+Enter to run a subset of a line of code. Using the section of code that you have already entered, select just `5*8` with your mouse and hit CTRL+Enter to run.</p>
 
 <p><i>Note: Make sure that you have CTRL+Enter in your muscle memory -- you are going to be using it a lot!</i></p> 
 
@@ -192,37 +196,35 @@ ul {
 
 <div class = "roundBorderBlack">
 <p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i>
- Any code that you will use more than once or upon which future lines of code depend should always be written and executed in the <b>source panel</b>.
+ Any code that you will use more than once or upon which future lines of code depend should always be written and executed in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>.
 </p>
 </div>
 
 <br>
 
-<!-- console panel -->
+<!--- console panel --->
 
 <h3>The console panel</h3>
-<p> The console panel provides the command line interface to the R program itself. When a line of code is run from the command prompt (`>`) on the console, the interface sends the code to R and R evaluates the code and returns any potential output.</p>
+<p> The  <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span> provides the command line interface to the R program itself. When a line of code is run from the command prompt (`>`) on the console, the interface sends the code to R and R evaluates the code and returns any potential output. When you ran the above sections of code from the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>, you may have noticed that the code input and output was provided in the console panel.This highlights a key component of the internal R Studio workflow: code written in the  source panel is sent to the console panel (CTRL+Enter), the console panel sends the code to R for evaluation, and R prints the results in the console panel (if applicable).</p>
 
-<p>When you ran the above sections of code from the <b>source panel</b>, you should have noticed that the code input and output was provided in the console panel.This highlights a key component of the internal R Studio workflow: code is written in the <b>source panel</b> and delivered to the console panel (CTRL+Enter) which then communicates with R to evaluate the code.</p>
+<p>You can run code directly from the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span>. To do so, simply type the code you would like to run and press enter.</p>
 
-<p>You can run code directly from the console panel. To do so, simply type the code you would like to run and press enter.</p>
-
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `1+1+2` after the command prompt on the console panel and press enter to run the code.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `1+1+2` after the command prompt on the  <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span> and press enter to run the code.</p>
 <br>
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Copy-and-paste the following into the <b>source panel</b> and press enter to run the section:</p> 
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Copy-and-paste the following into the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> and press enter to run the section:</p> 
 
 ```{r eval = FALSE}
 1+1+2
 3*5*8
 ```
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> You can use your keyboard to navigate between lines of code you've run in the console. This can be especially useful for modifying part of a section of code. For example, use the up arrow on your keyboard to change the line `1+1+2` to `1+1+2+3`.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> You can use your keyboard to navigate between lines of code you've run in the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span>. This can be especially useful for modifying part of a section of code. For example, use the up arrow on your keyboard to change the line `1+1+2` to `1+1+2+3`.</p>
 
 <br>
 
 <div class = "roundBorderBlack">
 <br>
-<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Any code that you will use only once should be written and executed in the console panel.Do not write code into the console panel if future code elements will depend on the code's output!</p>
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Any code that you will use only once should be written and executed in the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span>. Do not write code into the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span> if future code elements will depend on the code's output!</p>
 <hr style = "border: 1px solid #D3D3D3;">
 <p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Mathematical operators are similar to that in Excel (e.g., `*` for multiplication and `/` for division). Likewise, R follows the conventional order of operations (i.e., the same order of operations you would find on a scientific calculator or in Microsoft Excel). For example, the mathematical expression:</p>
 
@@ -279,7 +281,7 @@ Would be written in R as:
 
 <p>In R, it is often useful to save objects in your global environment by <b>assigning</b> a name to them. Assignment allows you to recall saved objects by typing the name rather than recreating the object. This is often necessary, as objects can be quite complex.</p>
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `hello world` into the <b>console panel</b> and hit CTRL+Enter.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `hello world` into the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span> and hit CTRL+Enter.</p>
 
 <p>You should have received the error message: `Error: unexpected symbol in "hello world"`. If you aren't already, you will soon become super annoyed by messages like these. So what did you do wrong? When you type a word without quotes (which can be single or double), R thinks you are calling an object or function from your environment. The object was undefined, so it produced an error.</p> 
 <br>
@@ -299,7 +301,7 @@ helloWorld <- 'hello world'
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `helloWorld` into the Console panel and notice the printed output.</p>
 <br>
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Enter or copy-and-paste the following into your <b>source panel</b> and execute using CTRL+Enter:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Enter or copy-and-paste the following into your  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> and execute using CTRL+Enter:</p>
 
 ```{r eval = FALSE}
 simpleAddition <- 1+1+2
@@ -309,7 +311,7 @@ simpleAddition <- 1+1+2
 <p>You have just created an object with the value of `1+1+2` and the name `simpleAddition`. You can use the name as a representation of the object.</p>
 <br>
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Explore the results of the object that you created by typing the following in the <b>console panel</b>:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Explore the results of the object that you created by typing the following in the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span>:</p>
 
 ```{r eval = FALSE}
 simpleAddition*4
@@ -347,7 +349,7 @@ simpleAddition/3
 
 <p>Good coding practices in most languages means adding plenty of descriptive content so you (and others) know what the script is doing at each point. This is known as adding <b>comments</b> or <b>commenting</b> your code. Comments act as a rudder for you by allowing you to retrace your steps if something goes wrong or remember what you did if you put a task down and return to it later. In R, you add a comment using `#`. R will not evaluate any part of a line that following a hashtag.</p>
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Try running the following from the <b>source panel</b> and observe what happens:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Try running the following from the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> and observe what happens:</p>
 
 ```{r eval = FALSE}
 # Adding a comment
@@ -379,7 +381,7 @@ helloWorld <- 'hello world'
 
 <p><b>Functions</b> are what data-wrangling-guru Hadley Wickham calls the "fundamental building block of R". Functions are a special type of R object that allow you to conduct often lengthy evaluations with limited work. The R environment contains many functions for data management, graphical display, and statistical analysis. To run a function, you type the name of the function followed by a set of parentheses enclosing what you want your function to evaluate.</p> 
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Combine the integers 1, 1, and 2 into a single object (the combine function in R is `c`) in the <b>source panel</b> and name the object `firstVector`:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Combine the integers 1, 1, and 2 into a single object (the combine function in R is `c`) in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> and name the object `firstVector`:</p>
 
 ```{r eval = FALSE}
 # Combine values:
@@ -390,7 +392,7 @@ firstVector <- c(1,1,2)
 
 <p>Many functions contain <strong>arguments</strong> in addition to the object you are evaluating. These arguments modify the behavior of the function (<i>Note: Some arguments are necessary while some are optional</i>). For example, the function `mean` contains an argument `na.rm` that tells R whether you want to remove NA (data Not Available) prior to running the function.</p> 
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> In the <b>source panel</b>, make an object with two integers and an NA. In the console panel, calculate the mean of the data with (na.rm = TRUE) and without (na.rm = FALSE) the modifier argument:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> In the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>, make an object with two integers and an NA. In the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span>, calculate the mean of the data with (na.rm = TRUE) and without (na.rm = FALSE) the modifier argument:</p>
 
 
 ```{r eval = FALSE}
@@ -423,7 +425,9 @@ mean(c(1, 2, NA), na.rm = TRUE)
 
 <br>
 
-<p>Many functions are available in base R but there are loads of functions that have been written by others and assembled into libraries (or packages) that you can download. These user-built libraries are very powerful and can automate many of the tasks you confront when coding. To download a library, you use the function `install.packages`. This function evaluates the name of a library, in quotation marks and installs the library on your computer. <i>Note: Each package will only be loaded once, therefore this process should be completed in the Console panel</i>.</p>
+<p>Many functions are available in base R but there are loads of functions that have been written by others and assembled into libraries (or packages) that you can download. These user-built libraries are very powerful and can automate many of the tasks you confront when coding. To download a library, you use the function `install.packages`. This function evaluates the name of a library, in quotation marks and installs the library on your computer. <i>Note: Each package will only be loaded once, therefore this process should be completed in the <span class="tt">console panel
+    <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>
+  </span></i>.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Install two libraries that we will use throughout the course of this workshop:</p>
 
@@ -433,7 +437,7 @@ install.packages('tidyverse')
 install.packages('RCurl')
 ```
 
-<p>Once a library is installed on your computer, it is almost ready to use, but not quite. You have to load the library into your environment using the function `library`. Installed libraries are defined objects therefore quotes are not necessary when loading them. <i>Note: This function needs to be run each time a new R session is initiated. Because future lines of code may be dependent on the library or libraries loaded, loading should always occur in the <b>source panel</b>.</i> </p>
+<p>Once a library is installed on your computer, it is almost ready to use, but not quite. You have to load the library into your environment using the function `library`. Installed libraries are defined objects therefore quotes are not necessary when loading them. <i>Note: This function needs to be run each time a new R session is initiated. Because future lines of code may be dependent on the library or libraries loaded, loading should always occur in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>.</i> </p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Load the tidyverse and RCurl libraries:</p>
 
@@ -445,7 +449,7 @@ library(RCurl)
 
 <div class = "roundBorderBlack">
 <br>
-<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Libraries should always be loaded in the <b>source panel</b>! It's best to load libraries one of three locations of your script:</p>
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Libraries should always be loaded in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>! It's best to load libraries one of three locations of your script:</p>
 <ul>
 <li>At the top of the script</li>
 <li>On a <b>source script</b> (to be covered in Lesson one)</li>
@@ -469,23 +473,27 @@ library(RCurl)
 <div class="roundBorder">
 <p><b>Keyboard shortcuts</b></p>
 <ul>
+<li>CTRL+C: Copy</li>
+<li>CTRL+V: Paste</li>
 <li>CTRL+S: Save file</li>
 <li>CTRL+Shift+N: New R script</li>
-<li>CTRL+Enter: Execute line or section of code from the <b>source panel</b>
+<li>CTRL+Enter: Execute line or section of code from the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span></li>
+<li>`<-` Assignment operator: Assign a name to an object in R</li>
 </ul>
 <hr style = "border: 1px solid #30288C;">
 <p><b>Vocabulary</b></p>
 <ul>
 <li><b>Script</b>: A file that contains all code for a set of operations</li>
-<li><b>Code</b>: Any text written in the source or console panel</li>
+<li><b>Source panel</b>: A panel of R Studio for writing, editing, and running scripts</li>
+<li><b>Code</b>: Any text written in the source or <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span></li>
 <li><b>Object</b>: One of many types of data stored in R's memory, such as individual values, tables, lists, and images</li>
 <li><b>Function</b>: Commands that can be used to execute complex or repetitive tasks</li>
 </ul>
 <hr style = "border: 1px solid #30288C;">
 <p><b>Best management practices</b></p>
 <ul>
-<li>Any code that you will use more than once should be written and executed in the <b>source panel</b></li>
-<li>Any code that you will use only once should be written and executed in the console panel</li>
+<li>Any code that you will use more than once should be written and executed in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span></li>
+<li>Any code that you will use only once should be written and executed in the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span></li>
 <li>Be aware of how many objects are stored in your global environment. To limit the amount of data stored in memory and make best use of the workspace panel, be sure to remove unecessary objects.</li>
 </ul>
 </div>
