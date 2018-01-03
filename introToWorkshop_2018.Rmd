@@ -130,7 +130,7 @@ ul {
 <ul>
 <li><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 100%"></i> Represents sections where user input is necessary.</li>
 
-<li>To simplify the flow of documents and avoid boring advanced users, definitions of vocabulary terms are provided by tooltips in bolded text. If you would like to see the definition of a term, simply hover your mouse over the text (try it 
+<li>Vocabulary terms are provided by tooltips in bolded text. If you would like to see the definition of a term, simply hover your mouse over the text (try it 
   <span class="tt">here
     <span class="ttText"><b>Tooltip</b>: An element of a user interface that provides information when a user hovers over an item with their mouse pointer.</span>
   </span>).</li>
@@ -168,12 +168,12 @@ ul {
 <img src="rStudio_environment.png" />
 <br>
 <br>
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Open R Studio and create a new R <span class="tt">script     <span class="ttText">A file that contains all code for a set of operations.</span>   </span> in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> using the keyboard combination <i>CTRL+SHIFT+N</i>. Even before you begin writing any <b>code</b>, it's good to save the script you will be working on. Save the file on your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Open R Studio and create a new R <span class="tt">script     <span class="ttText">A file that contains all code for a set of operations.</span>   </span> in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> using the keyboard combination <i>CTRL+SHIFT+N</i>. Even before you begin writing any <span class="tt">code<span class="ttText">Any text written in the source or console panel.</span></span>, it's good to save the script you will be working on. Save the file on your computer using the keyboard combination <i>CTRL+S</i>. Name the file "rIntro" (<i>note: the extension, ".R" will be assigned automatically</i>).</p>
 
 <!-- source panel -->
 
 <h3>The source panel</h3>
-<p>The  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> provides a useful interface for writing and editing <b>scripts</b> and is a great tool for observing and communicating what you have done. To execute <b>code</b> from the  source panel, place your cursor on the line you would like to run and use the keyboard shortcut CTRL+Enter. To run multiple lines of code at once, use your mouse to select the section of code you would like to run and hit CTRL+Enter.</p>
+<p>The  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> provides a useful interface for writing and editing <span class="tt">scripts<span class="ttText">A file that contains all code for a set of operations.</span></span> and is a great tool for observing and communicating what you have done. To execute <span class="tt">code<span class="ttText">Any text written in the source or console panel.</span></span> from the  source panel, place your cursor on the line you would like to run and use the keyboard shortcut CTRL+Enter. To run multiple lines of code at once, use your mouse to select the section of code you would like to run and hit CTRL+Enter.</p>
 <br>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `1+1+2` on the first line of your script in the source panel. Use the keyboard shortcut CTRL+Enter to execute the line of code that the cursor is on.</p>
@@ -205,7 +205,7 @@ ul {
 <!--- console panel --->
 
 <h3>The console panel</h3>
-<p> The  <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span> provides the command line interface to the R program itself. When a line of <b>code</b> is run from the command prompt (`>`) on the console, the interface sends the code to R and R which evaluates it and returns any potential output. When you ran the above sections of code from the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>, you may have noticed that the input and output was appeared in the console panel.This highlights a key component of the internal R Studio workflow: code written in the  source panel is sent to the console panel (CTRL+Enter), the console panel sends the code to R for evaluation, and R prints the results in the console panel (if applicable).</p>
+<p> The  <span class="tt">console panel<span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span></span> provides the command line interface to the R program itself. When a line of <span class="tt">code<span class="ttText">Any text written in the source or console panel.</span></span> is run from the command prompt (`>`) on the console, the interface sends the code to R and R which evaluates it and returns any potential output. When you ran the above sections of code from the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>, you may have noticed that the input and output was appeared in the console panel.This highlights a key component of the internal R Studio workflow: code written in the  source panel is sent to the console panel (CTRL+Enter), the console panel sends the code to R for evaluation, and R prints the results in the console panel (if applicable).</p>
 
 <p>You can run code directly from the console panel. To do so, simply type the code you would like to run and press enter.</p>
 
@@ -247,7 +247,7 @@ $$\frac{1+1+2}{3} + \frac{5}{8}$$
 
 <h3>The workspace panel</h3>
 
-<p>When you open R you initiate an <b>R session</b>. An R session is defined by all of the <b>code</b> that you have run and any <b>objects</b> that you've stored in the <b>global environment</b> (i.e., your systems memory). The <b>workspace panel</b> is where you can view your global environment and your <b>session history</b>. In addition to viewing, you can use this panel to save or clean your session history and objects in your global environment. Using these tools can help streamline your R workflow and aid in replication.</p>
+<p>When you open R you initiate an <span class="tt">R session<span class="ttText">Time spent and operations conducted since opening R (note: sessions may be saved and loaded to avoid lost work).</span></span>. An R session is defined by all of the <span class="tt">code<span class="ttText">Any text written in the source or console panel.</span></span> that you have run and any <span class="tt">objects<span class="ttText">One of many types of data stored in the R environment, such as individual values, functions, tables, lists, and images.</span></span> that you've stored in the <span class="tt">global environment<span class="ttText">A storage container that provides a reference point for all available objects in the current session.</span></span>. The  <span class="tt">workspace panel<span class="ttText">A panel of R Studio used to view/manage objects in your global environment and your session history.</span></span> is where you can view your global environment and your <span class="tt">session history<span class="ttText">All lines of code that have been sent to R since the beginning of a session (or since the session history was last cleared).</span></span>. In addition to viewing, you can use this panel to save or clean your session history and objects in your global environment. Using these tools can help streamline your R workflow and aid in replication.</p>
 
 <br>
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Click on the "History" tab of the workspace panel to view the commands that you have run so far.</p>
@@ -262,17 +262,17 @@ $$\frac{1+1+2}{3} + \frac{5}{8}$$
 <!-- viewer panel -->
 
 <h3>The viewer panel</h3>
-<p>There is a lot going on in the <b>viewer panel</b>, but basically it provides tools for viewing anything other than command line output. The tabs on this panel include:</p>
+<p>There is a lot going on in the <span class="tt">viewer panel<span class="ttText">A panel of R Studio used for navigating your system's files, viewing help files, and image/plot output (and more).</span></span>, but basically it provides tools for viewing anything other than command line output. The tabs on this panel include:</p>
 
 <ul>
 <li>Files: A file manager window (the initial location should default to your working directory).</li>
 <li>Plots: Any plots that you create can be viewed here.
-<li>Packages: R <b>libraries</b> that have been installed onto your system.
+<li>Packages: R <span class="tt">libraries<span class="ttText">A set of community-generated functions (note: Also called a package).</span></span> that have been installed onto your system.
 <li>Help: Help files that provide in-depth information into any R function that you will use.</li>
 <li>Viewer: Images and maps can be viewed here.
 </ul>
 
-<p><i>Note: The viewer panel contains tools for a number of other tasks, including tools for loading and installing <b>libraries</b> and managing files. We will not be using most of these features in this workshop but you may want to explore them to determine whether you'd like to integrate them into your workflow.</i></p>
+<p><i>Note: The viewer panel contains tools for a number of other tasks, including tools for loading and installing libraries and managing files. We will not be using most of these features in this workshop but you may want to explore them to determine whether you'd like to integrate them into your workflow.</i></p>
 
 <hr style="border-width: 10px;">
 
@@ -280,7 +280,7 @@ $$\frac{1+1+2}{3} + \frac{5}{8}$$
 
 <h2>The assignment operator</h2>
 
-<p>In R, it is often useful to save <b>objects</b> in your <b>global environment</b> by <b>assigning</b> a name to them. Assignment allows you to recall saved objects by typing the name rather than recreating the object. This is often necessary, as objects can be quite complex.</p>
+<p>In R, it is often useful to save <span class="tt">objects<span class="ttText">One of many types of data stored in the R environment, such as individual values, functions, tables, lists, and images.</span></span> in your <span class="tt">global environment<span class="ttText">A storage container that provides a reference point for all available objects in the current session.</span></span> by <span class="tt">assigning<span class="ttText">Provide a name for an R object.</span></span> a name to them. Assignment allows you to recall saved objects by typing the name rather than recreating the object. This is often necessary, as objects can be quite complex.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `hello world` into the <span class="tt">console panel     <span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span>   </span> and hit CTRL+Enter.</p>
 
@@ -297,7 +297,7 @@ helloWorld <- 'hello world'
 
 <br>
 
-<p>You will notice there is no output in the console. If you look at the <b>workspace panel</b>, however, you will see that your <b>global environment</b> now contains a "Value" with the name helloWorld.</p>
+<p>You will notice there is no output in the console. If you look at the  <span class="tt">workspace panel<span class="ttText">A panel of R Studio used to view/manage objects in your global environment and your session history.</span></span>, however, you will see that your <span class="tt">global environment<span class="ttText">A storage container that provides a reference point for all available objects in the current session.</span></span> now contains a "Value" with the name helloWorld.</p>
 <br>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Type `helloWorld` into the console panel and notice the printed output.</p>
@@ -337,19 +337,22 @@ simpleAddition/3
 <li>Make sure to explore the object prior to assigning a name to it. Assigning a name before testing an object can lead to headaches and unseen errors in your code.</li>
 </ul>
 <hr style = "border: 1px solid #D3D3D3;">
-<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Being careful with your naming conventions is very important! There are a lot of conventions out there for naming objects. The most important thing to avoid is naming an object and forgetting what you named it. The <b>Environment panel</b> can help you remember names (if you keep it clean), but the best practice is to use a consistent naming convention. Best management practices for naming objects include:</p>
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Being careful with your naming conventions is very important! There are a lot of conventions out there for naming objects. The most important thing to avoid is naming an object and forgetting what you named it. The <span class="tt">workspace panel<span class="ttText">A panel of R Studio used to view/manage objects in your global environment and your session history.</span></span> can help you remember names (if you keep it clean), but the best practice is to use a consistent naming convention. Best management practices for naming objects include:</p>
 <ul>
 <li>Avoid using all caps and unnecessary capitalization. When misused, capitalization leads to extra keystrokes without conveying additional information.</li>
 <li>Avoid using punctuation to separate words. For example, `hello_world` is a pain to type. Also, punctuation often conveys meaning that we may not intend. For example, assigning the name `hello.world` should be avoided because we should reserve the use of `.` to specify file types.</li>
-<li>Do use <b>camel case</b> (aka camelCase)! Camel case provides a clear distinction between words while avoiding too many keystrokes or symbols that convey meaning. Camel case is used in multi-word labels in which the first word is all lowercase and the first letter of any additional words is uppercase.</li>
+<li>Do use <span class="tt">camel case<span class="ttText">A convention of writing in which multiple words are joined without spaces and words following the initial word are capitalized.</span></span>! Camel case provides a clear distinction between words while avoiding too many keystrokes or symbols that convey meaning. Camel case is used in multi-word labels in which the first word is all lowercase and the first letter of any additional words is uppercase. For example, camel case would be written as camelCase.</li>
+<li>Never, never, never, never include spaces in names!
 </ul>
 </div>
 
 <hr style="border-width: 10px;">
 
+<!-- commenting -->
+
 <h2>Commenting out script: #comment!</h2>
 
-<p>Good coding practices in most languages means adding plenty of descriptive content so you (and others) know what the <b>script</b> is doing at each point. This is known as adding <b>comments</b> or commenting your script. Comments act as a rudder by making your scripts easy to communicate to others, adding structure to scripts, and helping you to retrace your steps when necessary. In R, you add a comment using `#`. R will not evaluate any part of a line that follows a hashtag.</p>
+<p>Good coding practices in most languages means adding plenty of descriptive content so you (and others) know what the <span class="tt">script<span class="ttText">A file that contains all code for a set of operations.</span></span> is doing at each point. This is known as adding <span class="tt">comments<span class="ttText">Use a `#` to communicate to R that the subsequent section of code will not be evaluated.</span></span> or commenting your script. Comments act as a rudder by making your scripts easy to communicate to others, adding structure to scripts, and helping you to retrace your steps when necessary. In R, you add a comment using `#`. R will not evaluate any part of a line that follows a hashtag.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Try running the following from the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> and observe what happens:</p>
 
@@ -359,7 +362,7 @@ simpleAddition/3
 1+1+2 # Adding a comment
 ```
 
-<p>It is good to add a comment before steps in a <b>code</b> that describes what happens. Make sure that the comments you've added truly describe the process. Your comment should be able to provide a description of what a section of code is doing that outside observers can comprehend.</p>
+<p>It is good to add a comment before steps in a <span class="tt">code<span class="ttText">Any text written in the source or console panel.</span></span> that describes what happens. Make sure that the comments you've added truly describe the process. Your comment should be able to provide a description of what a section of code is doing that outside observers can comprehend.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Add comments to the lines of code from the previous section:</p>
 
@@ -379,9 +382,11 @@ helloWorld <- 'hello world'
 
 <hr style="border-width: 10px;">
 
+<!-- functions -->
+
 <h2>The function</h2>
 
-<p><b>Functions</b> are what data-wrangling-guru Hadley Wickham calls the "fundamental building block of R". Functions are a special type of R <b>object</b> that allow you to conduct often lengthy evaluations with limited work. The R environment contains many functions for data management, graphical display, and statistical analysis. To run a function, you type the name of the function followed by a set of parentheses enclosing what you want your function to evaluate.</p> 
+<p><span class="tt">Functions<span class="ttText">Commands that can be used to execute complex or repetitive tasks.</span></span> are what data-wrangling-guru Hadley Wickham calls the "fundamental building block of R". Functions are a special type of R <span class="tt">object<span class="ttText">One of many types of data stored in the R environment, such as individual values, functions, tables, lists, and images.</span></span> that allow you to conduct often lengthy evaluations with limited work. The R environment contains many functions for data management, graphical display, and statistical analysis. To run a function, you type the name of the function followed by a set of parentheses enclosing what you want your function to evaluate.</p> 
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Combine the integers 1, 1, and 2 into a single object (the combine function in R is `c`) in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span> and name the object `firstVector`:</p>
 
@@ -390,11 +395,12 @@ helloWorld <- 'hello world'
 firstVector <- c(1,1,2)
 ```
 
-<p>Before you use a function it is often necessary to get a good sense of how it works. The "Help" tab of the <b>viewer panel</b> provides in-depth resources on each function. To access the help file for a given function simply type `?` followed by the name of the function in the <span class="tt">console panel<span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span></span>.</p>
+<p>Before you use a function it is often necessary to get a good sense of how it works. The "Help" tab of the <span class="tt">viewer panel<span class="ttText">A panel of R Studio used for navigating your system's files, viewing help files, and image/plot output (and more).</span></span> provides in-depth resources on each function. To access the help file for a given function simply type `?` followed by the name of the function in the <span class="tt">console panel<span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span></span>.</p>
 <br>
+
 <h4>Nested functions</h4>
 
-<p>Functions can be <b>nested</b> inside other functions. In other words, you can run a function inside another function. This can avoid making unnecessary assignments. To understand nested functions, it is important to recall that the name of an object is just a simplified way to call the object it describes.</p>
+<p>Functions can be nested inside other functions. In other words, you can run a function inside another function. This can avoid making unnecessary assignments. To understand <span class="tt">nested functions<span class="ttText">A function that is run inside of another function.</span></span>, it is important to recall that the name of an object is just a simplified way to call the object it describes.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Enter `firstVector` and `c(1,1,2)` in the console panel (separately) and note the output for each.</p>
 
@@ -425,9 +431,9 @@ c(c(1,1,2), c(3,5,8))
 ```
 <br>
 <h4>Arguments in functions</h4>
-<p>Many functions contain <b>arguments</b> in addition to the object you are evaluating. These arguments modify the behavior of the function (<i>Note: Some arguments are necessary while some are optional</i>). For example, the function `mean` contains an argument `na.rm` that tells R whether you want to remove NA (data Not Available) prior to running the function.</p> 
+<p>Many functions contain <span class="tt">arguments<span class="ttText">Conditions that modify the behavior of a function.</span></span> in addition to the object you are evaluating. These arguments modify the behavior of the function (<i>Note: Some arguments are necessary while some are optional</i>). For example, the function `mean` contains an argument `na.rm` that tells R whether you want to remove NA (data Not Available) prior to running the function.</p> 
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> In the  source panel, make an <b>object</b> with two integers and an NA and <b>assign</b> the name `twoValuesWithNA` to the object. In the console panel, calculate the mean of the data with (na.rm = TRUE) and without (na.rm = FALSE) the modifier argument:</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> In the  source panel, make an <span class="tt">object<span class="ttText">One of many types of data stored in the R environment, such as individual values, functions, tables, lists, and images.</span></span> with two integers and an NA and <span class="tt">assign<span class="ttText">Provide a name for an R object.</span></span> the name `twoValuesWithNA` to the object. In the console panel, calculate the mean of the data with (na.rm = TRUE) and without (na.rm = FALSE) the modifier argument:</p>
 
 
 ```{r eval = FALSE}
@@ -440,7 +446,7 @@ mean(twoValuesWithNA, na.rm = TRUE)
 ```
 <br>
 <h4>Libraries of functions</h4>
-<p>Many functions are available in base R but there are loads of functions that have been written by others and assembled into <b>packages</b> called libraries that you can download. These user-built libraries are very powerful and can automate many of the tasks you confront when coding. To download a library, you use the function `install.packages`. This function evaluates the name of a library, in quotation marks and installs the library on your computer. <i>Note: Each package will only be loaded once, therefore this process should be completed in the console panel</i>.</p>
+<p>Many functions are available in base R but there are loads of functions that have been written by others and assembled into <span class="tt">packages<span class="ttText">A set of community-generated functions (note: Also called a library).</span></span> called <span class="tt">libraries<span class="ttText">A set of community-generated functions (note: Also called a package).</span></span> that you can download. These user-built libraries are very powerful and can automate many of the tasks you confront when coding. To download a library, you use the function `install.packages`. This function evaluates the name of a library, in quotation marks and installs the library on your computer. <i>Note: Each package will only be loaded once, therefore this process should be completed in the console panel</i>.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Install two libraries that we will use throughout the course of this workshop:</p>
 
@@ -462,11 +468,11 @@ library(RCurl)
 
 <div class = "roundBorderBlack">
 <br>
-<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Libraries should always be loaded in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>! It's best to load libraries one of three locations of your script:</p>
+<p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Libraries should always be loaded in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>! It's best to load libraries one of three locations:</p>
 <ul>
 <li>At the top of the script</li>
-<li>On a <b>source script</b> (to be covered in Lesson one)</li>
-<li>Within a user-created function (to be covered in Lesson three)</li>
+<li>On a separate source script (to be covered in this workshop)</li>
+<li>Within a user-created function (to be covered in this workshop)</li>
 </ul>
 
 <hr style = "border: 1px solid #D3D3D3;">
@@ -509,13 +515,18 @@ library(RCurl)
 
 <p><b>Vocabulary</b></p>
 <ul>
-<li><b>Assign</b>: Provide a name for an R object.</li>
+<li><b>Argument</b>: Condition that modifies the behavior of a function</li>
+<li><b>Assign</b>: Provide a name for an R object</li>
+<li><b>Camel case</b>: A convention of writing in which multiple words are joined without spaces and words following the initial word are capitalized</li>
 <li><b>Code</b>: Any text written in the source or console panel</li>
+<li><b>Comment</b>: Use a `#` to communicate to R that the subsequent section of code will not be evaluated</li>
 <li><b>Console panel</b>: A panel of R Studio used to execute code and writing/running code that users do not intend to replicate</li>
 <li><b>Function</b>: Commands that can be used to execute complex or repetitive tasks</li>
-<li><b>Global environment</b>:</li>
-<li><b>Library</b>: A set of user-generated functions (note: Also called a package)</li>
-<li><b>Object</b>: One of many types of data stored in R's memory, such as individual values, functions, tables, lists, and images</li>
+<li><b>Global environment</b>: A storage container that provides a reference point for all available objects in the current session</li>
+<li><b>Library</b>: A set of community-generated functions (note: Also called a package)</li>
+<li><b>Nested function</b>: A function that is run inside of another function</li>
+<li><b>Object</b>: One of many types of data stored in the R environment, such as individual values, functions, tables, lists, and images</li>
+<li><b>Package</b>: A set of community-generated functions (note: Also called a library)</li>
 <li><b>R session</b>: Time spent and operations conducted since opening R (note: sessions may be saved and loaded to avoid lost work)</li>
 <li><b>Script</b>: A file that contains all code for a set of operations</li>
 <li><b>Session history</b>: All lines of code that have been sent to R since the beginning of a session (or since the session history was last cleared)</li>
