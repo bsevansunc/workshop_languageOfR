@@ -136,10 +136,10 @@ ul {
   </span>).</li>
 <li>`Gray boxes` are sections that appear exactly as they would in the R environment. You may copy-and-paste these sections directly into R (CTRL+C to copy and CTRL+V to paste).</li>
 <li><div class = "roundBorderBlackEx">White boxes with a thick gray border and a spy icon (<i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 100%"></i>) provide tips and tricks for users. </div></li>
-<li><div class = "roundBorderEx">Blue boxes provide summary information on hotkeys, operators, functions, vocabulary, and best management practices associated with a lesson. Pay careful attention to the material in blue boxes!</div></li>
+<li><div class = "roundBorderEx">Blue boxes provide summary information on keyboard shortcuts, operators, functions, vocabulary, and best management practices associated with a lesson. Pay careful attention to the material in blue boxes!</div></li>
 </ul>
 
-<i>Important! Throughout this workshop we will be using hotkeys. Workshop documents refer to Windows/Linux keyboard mapping. Mac users should use "command" instead of CTRL to execute keyboard shortcuts.</i>
+<i>Important! Throughout this workshop we will be using keyboard shortcuts. Workshop documents refer to Windows/Linux keyboard mapping. Mac users should use "command" instead of CTRL to execute keyboard shortcuts.</i>
 
 <hr style="border-width: 10px;">
 
