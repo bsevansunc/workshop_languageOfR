@@ -218,6 +218,8 @@ ul {
 3*5*8
 ```
 
+<br>
+
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> You can use your keyboard to navigate between lines of code you've run in the console panel. This can be especially useful for modifying part of a section of code. For example, use the up arrow on your keyboard to change the line `1+1+2` to `1+1+2+3`.</p>
 
 <br>
@@ -368,7 +370,7 @@ simpleAddition/3
 
 1+1+2 # Adding a comment
 ```
-
+<br>
 <p>It is good to add a comment before steps in a <span class="tt">code<span class="ttText">Any text written in the source or console panel.</span></span> that describes what happens. Make sure that the comments you've added truly describe the process. Your comment should be able to provide a description of what a section of code is doing that outside observers can comprehend.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Add comments to the lines of code from the previous section:</p>
@@ -401,7 +403,7 @@ helloWorld <- 'hello world'
 # Combine values:
 firstSet <- c(1,1,2)
 ```
-
+<br>
 <p>Before you use a function it is often necessary to get a good sense of how it works. The "Help" tab of the <span class="tt">viewer panel<span class="ttText">A panel of R Studio used for navigating your system's files, viewing help files, and image/plot output (and more).</span></span> provides in-depth resources on each function. To access the help file for a given function simply type `?` followed by the name of the function in the <span class="tt">console panel<span class="ttText">A panel of R Studio used to execute code and writing/running code that users do not intend to replicate.</span></span>.</p>
 <br>
 
@@ -409,9 +411,7 @@ firstSet <- c(1,1,2)
 
 <p>Functions can be nested inside other functions. In other words, you can run a function inside another function. This can avoid making unnecessary assignments. To understand <span class="tt">nested functions<span class="ttText">A function that is run inside of another function.</span></span>, it is important to recall that the name of an object is just a simplified way to call the object it describes.</p>
 
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Enter `firstSet` and `c(1,1,2)` in the console panel (separately) and note the output for each.</p>
-
-<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Because `firstSet` <i>IS</i> `c(1,1,2)`, the assigned name and the object are interchangeable.</p>
+<p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Enter `firstSet` and `c(1,1,2)` in the console panel (separately) and note the output for each. Because `firstSet` <i>IS</i> `c(1,1,2)`, the assigned name and the object are interchangeable.</p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> In the source panel, enter and run the following line of code to make a second set of numbers with the name `secondSet`:</p>
 ```{r eval = FALSE}
@@ -462,7 +462,7 @@ install.packages('tidyverse')
 
 install.packages('RCurl')
 ```
-
+<br>
 <p>Once a library is installed on your computer, it is almost ready to use, but not quite. You have to load the library into your environment using the function `library`. Installed libraries are defined objects therefore quotes are not necessary when loading them. <i>Note: This function needs to be run each time a new R session is initiated. Because future lines of code may be dependent on the library or libraries loaded, loading should always occur in the source panel.</i> </p>
 
 <p><i class="fa fa-user-circle-o" aria-hidden="true" style = "font-size: 150%"></i> Load the tidyverse and RCurl libraries:</p>
@@ -472,7 +472,7 @@ install.packages('RCurl')
 library(tidyverse)
 library(RCurl)
 ```
-
+<br>
 <div class = "roundBorderBlack">
 <br>
 <p><i class="fa fa-user-secret" aria-hidden="true" style = "font-size: 150%"></i> Libraries should always be loaded in the  <span class="tt">source panel     <span class="ttText">A panel of R Studio for writing, editing, and running scripts.</span>   </span>! It's best to load libraries one of three locations:</p>
