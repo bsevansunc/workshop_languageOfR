@@ -1,0 +1,489 @@
+site,species,count
+apple,amro,5
+apple,blja,1
+apple,cach,1
+apple,carw,1
+apple,cedw,2
+apple,grca,2
+apple,noca,3
+apple,rbwo,1
+apple,revi,1
+apple,tuti,3
+apple,wbnu,1
+apricot,amgo,3
+apricot,amro,1
+apricot,blja,1
+apricot,cach,2
+apricot,carw,1
+apricot,grca,6
+apricot,hofi,3
+apricot,howr,1
+apricot,modo,2
+apricot,noca,9
+apricot,rbwo,2
+apricot,sosp,2
+apricot,wbnu,1
+avocado,amcr,1
+avocado,amgo,1
+avocado,bhco,1
+avocado,cach,2
+avocado,cogr,3
+avocado,ficr,2
+avocado,grca,2
+avocado,hofi,1
+avocado,modo,5
+avocado,sosp,2
+banana,amcr,1
+banana,cach,2
+banana,carw,3
+banana,cedw,2
+banana,chsp,2
+banana,grca,1
+banana,howr,1
+banana,modo,1
+banana,noca,2
+banana,rbwo,1
+banana,revi,1
+banana,tuti,1
+bell pepper,amro,1
+bell pepper,bhco,3
+bell pepper,carw,3
+bell pepper,dowo,1
+bell pepper,eato,2
+bell pepper,grca,2
+bell pepper,hofi,1
+bell pepper,howr,2
+bell pepper,modo,1
+bell pepper,noca,14
+bell pepper,rthu,1
+bell pepper,rwbl,1
+bell pepper,sosp,2
+bell pepper,wbnu,2
+bell pepper,ysfl,1
+bilberry,amcr,1
+bilberry,amro,3
+bilberry,blja,4
+bilberry,cach,3
+bilberry,hofi,1
+bilberry,howr,1
+bilberry,noca,7
+bilberry,nomo,1
+bilberry,rbwo,1
+bilberry,tuti,3
+bilberry,wbnu,1
+blackberry,amcr,1
+blackberry,amro,1
+blackberry,cach,2
+blackberry,carw,3
+blackberry,cogr,1
+blackberry,hofi,6
+blackberry,howr,1
+blackberry,noca,5
+blackberry,piwo,1
+blackberry,tuti,3
+blackcurrant,amcr,1
+blackcurrant,amro,1
+blackcurrant,carw,1
+blackcurrant,coye,1
+blackcurrant,grca,6
+blackcurrant,howr,1
+blackcurrant,modo,1
+blackcurrant,sosp,1
+blackcurrant,tuti,1
+blood orange,amgo,1
+blood orange,amro,4
+blood orange,carw,3
+blood orange,grca,1
+blood orange,modo,3
+blood orange,noca,5
+blood orange,rbwo,1
+blueberry,amcr,5
+blueberry,amro,3
+blueberry,blja,7
+blueberry,carw,7
+blueberry,dowo,1
+blueberry,grca,1
+blueberry,hofi,1
+blueberry,howr,1
+blueberry,noca,6
+blueberry,rbwo,2
+blueberry,rthu,2
+boysenberry,amgo,1
+boysenberry,amro,3
+boysenberry,dowo,1
+boysenberry,eabl,2
+boysenberry,ficr,1
+boysenberry,grca,4
+boysenberry,howr,2
+boysenberry,inbu,2
+boysenberry,rbwo,1
+boysenberry,rthu,1
+boysenberry,tuti,2
+breadfruit,cach,1
+breadfruit,carw,10
+breadfruit,dowo,1
+breadfruit,grca,4
+breadfruit,hofi,3
+breadfruit,modo,1
+breadfruit,noca,10
+breadfruit,nomo,1
+breadfruit,sosp,2
+breadfruit,tuti,4
+breadfruit,wbnu,3
+canary melon,amro,2
+canary melon,bhco,1
+canary melon,blja,1
+canary melon,cach,3
+canary melon,carw,5
+canary melon,chsp,2
+canary melon,cogr,1
+canary melon,grca,4
+canary melon,modo,1
+canary melon,noca,3
+canary melon,rbwo,1
+canary melon,revi,1
+canary melon,sosp,1
+canary melon,woth,2
+cantaloupe,amro,9
+cantaloupe,dowo,1
+cantaloupe,grca,3
+cantaloupe,howr,5
+cantaloupe,noca,5
+cantaloupe,revi,1
+cantaloupe,sosp,3
+cherimoya,amro,2
+cherimoya,blja,4
+cherimoya,carw,1
+cherimoya,cedw,1
+cherimoya,cogr,3
+cherimoya,grca,2
+cherimoya,howr,6
+cherimoya,modo,1
+cherimoya,noca,5
+cherry,amgo,3
+cherry,eawp,1
+cherry,hofi,10
+cherry,noca,2
+cherry,woth,3
+chili pepper,amcr,3
+chili pepper,amgo,1
+chili pepper,amro,5
+chili pepper,cach,1
+chili pepper,dowo,1
+chili pepper,eawp,1
+chili pepper,grca,3
+chili pepper,howr,3
+chili pepper,noca,2
+chili pepper,sosp,1
+chili pepper,tuti,1
+chili pepper,wbnu,2
+clementine,amcr,3
+clementine,amgo,2
+clementine,amro,2
+clementine,blja,5
+clementine,cogr,1
+clementine,howr,3
+clementine,oven,1
+clementine,tuti,7
+cloudberry,amro,5
+cloudberry,blja,1
+cloudberry,cach,4
+cloudberry,carw,1
+cloudberry,cogr,2
+cloudberry,dowo,1
+cloudberry,grca,5
+cloudberry,howr,1
+cloudberry,modo,1
+cloudberry,noca,2
+cloudberry,revi,1
+cloudberry,rwbl,2
+cloudberry,wbnu,1
+coconut,amro,9
+coconut,bhco,1
+coconut,cach,1
+coconut,grca,3
+coconut,hofi,3
+coconut,howr,3
+coconut,inbu,2
+coconut,noca,7
+coconut,sosp,1
+coconut,wbnu,1
+coconut,ysfl,1
+cranberry,amro,4
+cranberry,cach,1
+cranberry,carw,1
+cranberry,chsp,1
+cranberry,cogr,2
+cranberry,eabl,1
+cranberry,grca,2
+cranberry,hofi,2
+cranberry,howr,1
+cranberry,modo,3
+cranberry,noca,9
+cranberry,rbwo,1
+cranberry,tuti,1
+cranberry,ysfl,1
+cucumber,amgo,1
+cucumber,carw,1
+cucumber,cogr,1
+cucumber,dowo,1
+cucumber,grca,3
+cucumber,howr,3
+cucumber,modo,1
+cucumber,noca,9
+cucumber,tuti,1
+currant,amro,3
+currant,cach,10
+currant,carw,2
+currant,eabl,1
+currant,grca,3
+currant,hofi,1
+currant,howr,2
+currant,modo,5
+currant,noca,5
+currant,rbwo,1
+currant,sosp,2
+currant,tuti,2
+currant,wbnu,1
+damson,amgo,1
+damson,amro,5
+damson,bhco,1
+damson,blja,1
+damson,cach,1
+damson,carw,1
+damson,grca,1
+damson,howr,1
+damson,modo,3
+damson,noca,6
+damson,sosp,3
+damson,tuti,1
+date,amro,1
+date,cach,1
+date,cogr,13
+date,eawp,1
+date,grca,3
+date,hofi,1
+date,howr,1
+date,modo,1
+date,noca,5
+date,sosp,2
+date,tuti,1
+date,wbnu,1
+dragonfruit,amro,5
+dragonfruit,blja,2
+dragonfruit,hofi,1
+dragonfruit,howr,3
+dragonfruit,modo,1
+dragonfruit,noca,7
+dragonfruit,sosp,1
+durian,amcr,1
+durian,amro,12
+durian,bhco,1
+durian,blja,1
+durian,chsp,1
+durian,ficr,1
+durian,grca,1
+durian,hofi,4
+durian,howr,3
+durian,modo,3
+durian,noca,3
+durian,rbwo,1
+durian,sosp,2
+eggplant,blja,1
+eggplant,cach,1
+eggplant,hawo,1
+eggplant,howr,1
+eggplant,modo,2
+eggplant,noca,9
+eggplant,revi,1
+eggplant,rthu,1
+eggplant,sosp,1
+elderberry,amro,6
+elderberry,blja,2
+elderberry,cach,1
+elderberry,carw,2
+elderberry,cedw,15
+elderberry,grca,1
+elderberry,hofi,2
+elderberry,howr,3
+elderberry,nomo,3
+elderberry,revi,1
+elderberry,sosp,4
+elderberry,tuti,3
+elderberry,wbnu,1
+feijoa,amgo,1
+feijoa,amro,1
+feijoa,cach,5
+feijoa,carw,3
+feijoa,eawp,1
+feijoa,grca,11
+feijoa,hofi,3
+feijoa,howr,1
+feijoa,noca,2
+feijoa,oror,1
+feijoa,rbwo,1
+feijoa,tuti,4
+fig,amro,8
+fig,bhco,1
+fig,blja,2
+fig,carw,1
+fig,cogr,1
+fig,grca,10
+fig,hofi,6
+fig,modo,3
+fig,noca,6
+fig,nomo,1
+goji berry,amro,8
+goji berry,blja,3
+goji berry,cach,1
+goji berry,carw,1
+goji berry,cogr,1
+goji berry,hofi,3
+goji berry,modo,1
+goji berry,noca,6
+goji berry,sosp,1
+goji berry,ysfl,1
+gooseberry,amro,1
+gooseberry,cach,1
+gooseberry,grca,1
+gooseberry,howr,1
+gooseberry,noca,2
+gooseberry,sosp,1
+gooseberry,tuti,1
+grape,blja,9
+grape,cach,2
+grape,carw,1
+grape,cogr,4
+grape,grca,2
+grape,noca,5
+grape,nomo,1
+grape,sosp,1
+grape,tuti,1
+grapefruit,amro,1
+grapefruit,cach,4
+grapefruit,carw,1
+grapefruit,cogr,6
+grapefruit,grca,11
+grapefruit,sosp,4
+grapefruit,tuti,2
+grapefruit,wbnu,1
+guava,amgo,2
+guava,bhco,3
+guava,blja,3
+guava,cach,6
+guava,cogr,7
+guava,dowo,2
+guava,eabl,2
+guava,eawp,1
+guava,ficr,1
+guava,modo,1
+guava,noca,6
+guava,rbwo,3
+guava,rthu,1
+guava,sosp,2
+guava,tuti,7
+honeydew,amgo,1
+honeydew,amro,2
+honeydew,bhco,2
+honeydew,cach,3
+honeydew,carw,1
+honeydew,eabl,2
+honeydew,grca,1
+honeydew,rbwo,1
+honeydew,sosp,1
+honeydew,wbnu,1
+huckleberry,amro,5
+huckleberry,blja,1
+huckleberry,cach,3
+huckleberry,cogr,31
+huckleberry,grca,2
+huckleberry,howr,1
+huckleberry,noca,6
+huckleberry,piwo,1
+huckleberry,rbwo,1
+huckleberry,sosp,1
+huckleberry,tuti,3
+jackfruit,amgo,1
+jackfruit,amro,6
+jackfruit,cach,1
+jackfruit,cogr,3
+jackfruit,grca,7
+jackfruit,hofi,12
+jackfruit,howr,3
+jackfruit,noca,10
+jackfruit,sosp,1
+jambul,amcr,1
+jambul,amro,5
+jambul,bhco,2
+jambul,cach,10
+jambul,carw,1
+jambul,cedw,1
+jambul,eabl,1
+jambul,grca,7
+jambul,howr,1
+jambul,modo,1
+jambul,noca,5
+jambul,rthu,1
+jambul,sosp,3
+jambul,tuti,1
+jujube,amcr,1
+jujube,amgo,3
+jujube,amro,12
+jujube,blja,1
+jujube,cach,5
+jujube,carw,1
+jujube,cogr,3
+jujube,grca,3
+jujube,hawo,1
+jujube,modo,1
+jujube,noca,10
+jujube,nomo,1
+jujube,piwo,1
+jujube,sosp,2
+jujube,tuti,3
+jujube,wbnu,1
+kiwi fruit,amcr,2
+kiwi fruit,bhco,1
+kiwi fruit,blja,1
+kiwi fruit,cach,2
+kiwi fruit,carw,1
+kiwi fruit,cogr,2
+kiwi fruit,grca,8
+kiwi fruit,noca,3
+kiwi fruit,sosp,1
+kumquat,amcr,3
+kumquat,cach,2
+kumquat,carw,1
+kumquat,dowo,1
+kumquat,eaph,1
+kumquat,eawp,1
+kumquat,grca,2
+kumquat,howr,1
+kumquat,modo,1
+kumquat,noca,8
+kumquat,rbwo,1
+kumquat,sosp,3
+kumquat,wbnu,1
+lemon,amcr,1
+lemon,amgo,1
+lemon,amro,8
+lemon,cach,4
+lemon,carw,1
+lemon,cogr,8
+lemon,dowo,1
+lemon,eabl,1
+lemon,modo,1
+lemon,noca,13
+lemon,rwbl,1
+lemon,sosp,5
+lemon,tuti,2
+lime,amcr,1
+lime,amro,3
+lime,baor,1
+lime,cach,3
+lime,chsp,5
+lime,hofi,1
+lime,howr,3
+lime,noca,1
+lime,rwbl,1
+lime,sosp,5
