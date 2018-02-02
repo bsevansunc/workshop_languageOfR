@@ -39,6 +39,20 @@ knitr::opts_chunk$set(echo = TRUE)
 # ---- data ----
 #=================================================================================*
 
+# Provide the web addresses of the files:
+
+url <- 'https://raw.githubusercontent.com/bsevansunc/workshop_languageOfR/master'
+
+habitsURL <- getURL(
+  paste(url, 'birdHabits.csv', sep = '/')
+)
+
+countsURL <- getURL(
+  paste(url, 'birdCounts.csv', sep = '/')
+)
+
+# Some vectors:
+
 exampleFactor <- factor(c('three','two','one', 'one'))
 
 exampleFactorLevels <- factor(
@@ -52,6 +66,27 @@ exampleFactorLabels <- factor(
 )
 
 numericVector <- c(1, 1, 2, 3)
+
+# Some data frames:
+
+birdHabits <- tbl_df(
+  read.csv(text = habitsURL, stringsAsFactors = FALSE)
+)
+
+birdCounts <- tbl_df(
+  read.csv(text = countsURL, stringsAsFactors = FALSE)
+)
+
+# Clean up iris for analysis:
+
+irisTbl <- tbl_df(iris)
+
+names(irisTbl) <-
+  c('sepalLength',
+    'sepalWidth',
+    'petalLength',
+    'petalWidth',
+    'species')
 
 #---------------------------------------------------------------------------------*
 # ---- github data ----
