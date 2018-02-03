@@ -130,10 +130,16 @@ birdHabits <- readGit_csv(url, 'birdHabits.csv')
 # ---- other object classes ----
 #---------------------------------------------------------------------------------*
 
-# Example matrix
-
+# Example matrix objects:
 
 m <- matrix(fibFun(c(1,1), 6), ncol = 2)
+
+exampleMatrix <- sample(1:5, 60, replace = TRUE) %>%
+  matrix(ncol = 3, byrow = TRUE)
+
+# Add a treatment vector the matrix after converting to a data frame:
+
+treatmentVector <- sample(letters[1:2], 10, replace = TRUE)
 
 
 
