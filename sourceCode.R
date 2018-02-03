@@ -23,6 +23,30 @@ theme_add <- function(){
   )
 }
 
+# Read github csv:
+
+readGit_csv <- function(url, filename){
+  # Location of file:
+  fileUrl <- getURL(
+    paste(url, filename, sep = '/')
+  )
+  # Read file
+  outFrame <- read.csv(text = fileUrl, stringsAsFactors = FALSE) %>%
+    tbl_df
+  return(outFrame)
+}
+
+# Fibonacci:
+
+fibFun <- function(seed, howLong){
+  v <- vector('numeric', length = howLong)
+  v[1:2] <- seed
+  for(i in 3:length(v)){
+    v[i] <- v[i-1]+v[i-2]
+  }
+  return(v)
+}
+
 #=================================================================================*
 # ---- packages, settings, and options ----
 #=================================================================================*
@@ -35,25 +59,26 @@ smartLibrary('tidyverse')
 
 knitr::opts_chunk$set(echo = TRUE)
 
-#=================================================================================*
-# ---- data ----
-#=================================================================================*
-
-# Provide the web addresses of the files:
+# Provide the file read location:
 
 url <- 'https://raw.githubusercontent.com/bsevansunc/workshop_languageOfR/master'
 
-habitsURL <- getURL(
-  paste(url, 'birdHabits.csv', sep = '/')
-)
-
-countsURL <- getURL(
-  paste(url, 'birdCounts.csv', sep = '/')
-)
+#=================================================================================*
+# ---- data ----
+#=================================================================================*
+# ---- vectors ----
+#---------------------------------------------------------------------------------*
 
 # Some vectors:
 
+v <- fibFun(c(1,1), 5)
+
 exampleFactor <- factor(c('three','two','one', 'one'))
+
+monthFactor <- month.name[1:6] %>%
+  sample(size = 10,  replace = TRUE) %>%
+  tolower %>% 
+  factor
 
 exampleFactorLevels <- factor(
   exampleFactor,
@@ -65,35 +90,50 @@ exampleFactorLabels <- factor(
   labels = c('One', 'Two', 'Three')
 )
 
-numericVector <- c(1, 1, 2, 3)
-
-# Some data frames:
-
-birdHabits <- tbl_df(
-  read.csv(text = habitsURL, stringsAsFactors = FALSE)
-)
-
-birdCounts <- tbl_df(
-  read.csv(text = countsURL, stringsAsFactors = FALSE)
-)
-
-# Clean up iris for analysis:
-
-irisTbl <- tbl_df(iris)
-
-names(irisTbl) <-
-  c('sepalLength',
-    'sepalWidth',
-    'petalLength',
-    'petalWidth',
-    'species')
+numericVector <- fibFun(c(1,1), 4)
 
 #---------------------------------------------------------------------------------*
-# ---- github data ----
+# ---- data frames ----
 #---------------------------------------------------------------------------------*
 
-fileURL <- getURL('https://raw.githubusercontent.com/SMBC-NZP/smbc-nzp.github.io/master/rWorkshop/data/birdCounts.csv?token=AFXm5JalDukWyABXt2IR3mC6HGNdqCoDks5ac1ehwA%3D%3D')
+# Dummy data frame:
 
-birdCounts <- read.csv(text = fileURL) %>%
-  tbl_df
+dummyData <-  data.frame(
+  gen = c('a', 'b', 'a', 'a', 'b'),
+  n = fibFun(c(3,5), 5)
+  )
+
+# Tidy up iris:
+
+irisTbl <- tbl_df(iris) %>%
+  rename(
+    sepalLength = Sepal.Length,
+    sepalWidth = Sepal.Width,
+    petalLength = Petal.Length,
+    petalWidth = Petal.Width,
+    species = Species
+  )
+
+# World Health Organization's population dataset:
+
+population
+
+# Bird point count data:
+
+birdCounts <- readGit_csv(url, 'birdCounts.csv')
+
+# Bird trait data:
+
+birdHabits <- readGit_csv(url, 'birdHabits.csv')
+
+#---------------------------------------------------------------------------------*
+# ---- other object classes ----
+#---------------------------------------------------------------------------------*
+
+# Example matrix
+
+
+m <- matrix(fibFun(c(1,1), 6), ncol = 2)
+
+
 
