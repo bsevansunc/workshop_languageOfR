@@ -73,8 +73,9 @@ length(monthChar[monthChar == 'February'|monthChar == 'March'])
 unique(monthChar)
 
 # 1.f The code below is an incomplete function that counts the number of values
-# in a vector contains a given letter, 'x'. Complete this function and test 
-# by calculating the number of values in monthChar that end in the letter "y".
+# in a vector that contain a given letter, 'x', as its last letter. Complete this
+# function and test by calculating the number of values in monthChar that end in
+# the letter "y".
 
 # lastLetterSum <- function(vectorIn, x){
 #   lastLetter <- str_sub(# COMPLETE
