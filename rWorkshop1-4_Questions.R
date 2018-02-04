@@ -43,52 +43,35 @@ monthFactor
 # first letter of each label is capitalized. Assign the name "month" to the
 # resultant object:
 
-month <-
-  factor(
-    monthFactor,
-    levels = c('february', 'april', 'may', 'june'),
-    labels = c('February', 'April', 'May', 'June')
-  )
+
 
 # 1.b Convert the "month" vector to a character vector and assign the name 
 # "monthChar" to the resultant object:
 
-monthChar <- as.character(month)
+
 
 # 1.c Use indexing to extract the fourth and seventh value of monthChar:
 
-monthChar[c(4,7)]
+
 
 # 1.d In one line of code, calculate the number of values in monthChar for which
 # the month is February OR March:
 
-sum(monthChar == 'February'|monthChar == 'March')
 
-# or:
-
-length(monthChar[monthChar == 'February'|monthChar == 'March'])
 
 # 1.e Extract a vector of unique values of monthChar:
 
-unique(monthChar)
+
 
 # 1.f The code below is an incomplete function that counts the number of values
 # in a vector contains a given letter, 'x'. Complete this function and test 
 # by calculating the number of values in monthChar that end in the letter "y".
 
-# lastLetterSum <- function(vectorIn, x){
-#   lastLetter <- str_sub(# COMPLETE
-#   nLastLetter <- # COMPLETE
-#   return(nLastLetter)
-# }
-
 lastLetterSum <- function(vectorIn, x){
-  lastLetter <- str_sub(vectorIn, start = -1)
-  nLastLetter <- sum(lastLetter == x)
+  lastLetter <- str_sub(# COMPLETE
+  nLastLetter <- # COMPLETE
   return(nLastLetter)
 }
-
-lastLetterSum(monthChar, "y")
 
 #---------------------------------------------------------------------------------*
 # ---- Question 2 ----
@@ -102,37 +85,36 @@ exampleMatrix
 # 2.a Subset exampleMatrix to columns 1 and 3 and rows 1-10. Assign the name 
 # exampleMatSub to the resultant object:
 
-exampleMatSub <- exampleMatrix[1:10, c(1,3)]
+
 
 # 2.b Convert exampleMatSub to a data frame. Name the resultant object exampleDf:
 
-exampleDf <- as.data.frame(exampleMatSub)
+
 
 # 2.c Rename the columns of the data frame "pre" and "post":
 
-names(exampleDf) <- c('pre', 'post')
+
 
 # 2.d The following vector, "treatmentVector", contains two treatment levels, "a"
 # and "b". Add treatmentVector to exampleDf and name the new column treatment:
 
 treatmentVector
 
-exampleDf$treatment <- treatmentVector
 
 # 2.e Re-arrange the columns such that "treatment" is the first column, "pre"
 # is the second column, and "post" is the third column. Name the resultant
 # object "exampleDf2":
 
-exampleDf2 <- exampleDf[, c(3,1:2)]
+
 
 # 2.f Calculate the positions (row numbers) for which the pre value is equal to 5:
 
-which(exampleDf$pre == 5)
+
 
 # 2.g Using the object exampleDf2, calculate the mean of pre values for
 # treatment "b":
 
-mean(exampleDf2[exampleDf2$treatment == 'b', 'pre'])
+
 
 #---------------------------------------------------------------------------------*
 # ---- Question 3 ----
@@ -145,38 +127,30 @@ population
 
 # 3.a Assign the name "whoPopulation" to the "population" data frame:
 
-whoPopulation <- population
+
 
 # 3.b Subset whoPopulation to only countries that include the word
 # "State" in their names:
 
-whoPopulation[str_detect(whoPopulation$country, 'State'),]
+
 
 # 3.c Repeat 3.a above and extract a vector of unique country names:
 
-unique(whoPopulation[str_detect(whoPopulation$country, 'State'),]$country)
+
 
 # 3.d Subset whoPopulation to the countries Jamaica, Bahamas, Cuba:
 
-whoPopulation[whoPopulation$country %in% c('Jamaica', 'Bahamas', 'Cuba'),]
+
 
 # 3.e The code below is an incomplete function that is intended to allow users
 # to calculate the population of a given country on a given year. Complete the
 # function and use it to calculate the population of the Bahamas in 2012:
 
-# popCountryYear <- function(country, yr){
-#   whoCountrySubset <- whoPopulation[# COMPLETE
-#   whoYrSubset <- whoCountrySubset[ # COMPLETE
-#   return( # COMPLETE
-# }
-
 popCountryYear <- function(country, yr){
-  whoCountrySubset <- whoPopulation[whoPopulation$country == country,]
-  whoYrSubset <- whoCountrySubset[whoCountrySubset$year == yr,]
-  return(whoYrSubset$population)
+  whoCountrySubset <- whoPopulation[# COMPLETE
+  whoYrSubset <- whoCountrySubset[ # COMPLETE
+  return( # COMPLETE
 }
-
-popCountryYear('Bahamas', 2012)
 
 #---------------------------------------------------------------------------------*
 # ---- Question 4 ----
@@ -191,55 +165,43 @@ birdHabits
 
 # 4.a Using the "birdCounts" data frame, extract a unique vector of sites:
 
-unique(birdCounts$site)
+
 
 # 4.b Using the "birdCounts" data frame, extract the first five values of 
 # unique site names:
 
-unique(birdCounts$site)[1:5]
+
 
 # 4.c Using the "birdHabits" data frame, extract a unique vector of species that 
 # are insectivores:
 
-unique(birdHabits[birdHabits$diet == 'insectivore', ]$species)
+
 
 # 4.d Using the "birdCounts" data frame, extract a unique vector of sites:
 
-unique(birdCounts$site)
+
 
 # 4.e The code below is an incomplete function that is intended to allow users
 # to extract a unique vector of species for some diet class. Complete the
 # function and use it to extract a unique vector of insectivores:
 
-# sppDietClass <- function(dfIn, dietClass){
-#   unique(dfIn$diet # COMPLETE
-# }
-
 sppDietClass <- function(dfIn, dietClass){
-  unique(dfIn[dfIn$diet == dietClass, ]$species)
+  unique(dfIn$diet # COMPLETE
 }
-
-sppDietClass(birdHabits, 'insectivore')
 
 # 4.f Use the function you created in 4.e to subset birdCounts to just 
 # insectivore observations:
 
-birdCounts[birdCounts$species %in% sppDietClass(birdHabits, 'insectivore'),]
+
 
 # 4.g The code below is an incomplete function that is intended to allow users
 # to subset a data frame to a given diet class (as 4.f above). Complete
 # this function and use it to subset birdCounts to just insectivore 
 # observations:
 
-# dietCountSubset <- function(dfIn, dietClass){
-#   dfIn[dfIn$species # COMPLETE
-# }
-
 dietCountSubset <- function(dfIn, dietClass){
-  dfIn[dfIn$species %in% sppDietClass(birdHabits, dietClass),]
+  dfIn[dfIn$species # COMPLETE
 }
-
-dietCountSubset(birdCounts, 'insectivore')
 
 # 4.h The code below is an incomplete function that is intended to allow users
 # to sum the total count of a given diet class for a given site. The
@@ -248,23 +210,13 @@ dietCountSubset(birdCounts, 'insectivore')
 # number of insectivores at the site "apricot":
 
 
-# dietSiteSum <- function(dfIn, dietClass, site){
-#   dietClassSubset <- dietCountSubset(dfIn, dietClass)
-#   siteSubset <- dietClassSubset[# COMPLETE
-#   sumCount <- sum(siteSubset$ # COMPLETE
-#   outFrame <- data_frame(site = site, count = # COMPLETE
-#   return( # COMPLETE
-# }
-
 dietSiteSum <- function(dfIn, dietClass, site){
   dietClassSubset <- dietCountSubset(dfIn, dietClass)
-  siteSubset <- dietClassSubset[dietClassSubset$site == site,]
-  sumCount <- sum(siteSubset$count)
-  outFrame <- data_frame(site = site, count = sumCount)
-  return(outFrame)
+  siteSubset <- dietClassSubset[# COMPLETE
+  sumCount <- sum(siteSubset$ # COMPLETE
+  outFrame <- data_frame(site = site, count = # COMPLETE
+  return( # COMPLETE
 }
-
-dietSiteSum(birdCounts, 'insectivore', 'apricot')
 
 #---------------------------------------------------------------------------------*
 # ---- Question 5 ----

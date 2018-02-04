@@ -126,6 +126,13 @@ birdCounts <- readGit_csv(url, 'birdCounts.csv')
 
 birdHabits <- readGit_csv(url, 'birdHabits.csv')
 
+# Species richness
+
+birdRichness <- birdCounts %>%
+  group_by(site) %>% 
+  summarize(richness = length(unique(species))) %>%
+  sample_n(10)
+
 #---------------------------------------------------------------------------------*
 # ---- other object classes ----
 #---------------------------------------------------------------------------------*
