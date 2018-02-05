@@ -59,6 +59,10 @@ smartLibrary('tidyverse')
 
 knitr::opts_chunk$set(echo = TRUE)
 
+rename <- dplyr::rename
+
+select <- dplyr::select
+
 # Provide the file read location:
 
 url <- 'https://raw.githubusercontent.com/bsevansunc/workshop_languageOfR/master'
