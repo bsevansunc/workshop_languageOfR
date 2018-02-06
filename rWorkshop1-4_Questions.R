@@ -183,7 +183,7 @@ birdHabits
 # function and use it to extract a unique vector of insectivores:
 
 sppDietClass <- function(dfIn, dietClass){
-  unique(dfIn$diet # COMPLETE
+  unique(dfIn[dfIn$diet # COMPLETE
 }
 
 # 4.e Use the function you created in 4.d to subset birdCounts to just 
