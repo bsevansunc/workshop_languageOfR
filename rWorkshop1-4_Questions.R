@@ -178,11 +178,7 @@ birdHabits
 
 
 
-# 4.d Using the "birdCounts" data frame, extract a unique vector of sites:
-
-
-
-# 4.e The code below is an incomplete function that is intended to allow users
+# 4.d The code below is an incomplete function that is intended to allow users
 # to extract a unique vector of species for some diet class. Complete the
 # function and use it to extract a unique vector of insectivores:
 
@@ -190,13 +186,13 @@ sppDietClass <- function(dfIn, dietClass){
   unique(dfIn$diet # COMPLETE
 }
 
-# 4.f Use the function you created in 4.e to subset birdCounts to just 
+# 4.e Use the function you created in 4.d to subset birdCounts to just 
 # insectivore observations:
 
 
 
-# 4.g The code below is an incomplete function that is intended to allow users
-# to subset a data frame to a given diet class (as 4.f above). Complete
+# 4.f The code below is an incomplete function that is intended to allow users
+# to subset a data frame to a given diet class (as 4.e above). Complete
 # this function and use it to subset birdCounts to just insectivore 
 # observations:
 
@@ -204,7 +200,7 @@ dietCountSubset <- function(dfIn, dietClass){
   dfIn[dfIn$species # COMPLETE
 }
 
-# 4.h The code below is an incomplete function that is intended to allow users
+# 4.g The code below is an incomplete function that is intended to allow users
 # to sum the total count of a given diet class for a given site. The
 # function will return a one-row data frame with the columns, "dietClass", "site",
 # and "count". Complete the function and use it to calculate the 
