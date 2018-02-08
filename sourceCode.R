@@ -139,6 +139,22 @@ birdRichness <- birdCounts %>%
   mutate(area = sample(1:20, 10, replace = TRUE)) %>%
   select(site, area)
 
+motorTrend <- mtcars %>%
+  mutate(model = rownames(mtcars)) %>%
+  slice(-c(2, 4, 6, 26, 27, 29)) %>%
+  separate(model, sep = ' ', into = c('make', 'model')) %>%
+  arrange(make, model) %>%
+  select(make, model, mpg:carb)
+
+states1975 <- data_frame(
+  region = state.region,
+  division = state.division,
+  state = state.name,
+  area = state.area,
+  pop75 = state.x77[, 'Population']
+)
+
+
 #---------------------------------------------------------------------------------*
 # ---- other object classes ----
 #---------------------------------------------------------------------------------*
