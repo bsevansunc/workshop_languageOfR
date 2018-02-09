@@ -154,6 +154,15 @@ states1975 <- data_frame(
   pop75 = state.x77[, 'Population']
 )
 
+# Star wars!
+
+measurements <- starwars %>%
+  select(name, height, mass) %>%
+  filter(!is.na(mass))
+
+origins <- starwars %>%
+  select(name, homeworld, species) %>%
+  filter(name %in% measurements$name)
 
 #---------------------------------------------------------------------------------*
 # ---- other object classes ----
