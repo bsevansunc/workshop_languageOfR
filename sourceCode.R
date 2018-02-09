@@ -151,7 +151,7 @@ states1975 <- data_frame(
   division = state.division,
   state = state.name,
   area = state.area,
-  pop75 = state.x77[, 'Population']
+  population = state.x77[, 'Population']
 )
 
 # Star wars!
