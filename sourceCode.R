@@ -154,6 +154,8 @@ states1975 <- data_frame(
   population = state.x77[, 'Population']
 )
 
+whoPopulation <- population
+
 # Star wars!
 
 measurements <- starwars %>%
