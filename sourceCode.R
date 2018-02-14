@@ -181,5 +181,114 @@ exampleMatrix <- sample(1:5, 60, replace = TRUE) %>%
 
 treatmentVector <- sample(letters[1:2], 10, replace = TRUE)
 
+# 1NF:  Each row is an observation:
+
+messy1NFa <- data.frame(id = obs1,
+                        birdID = rep('1123-58132', 3), 
+                        observationDate = rep('2016-05-16', 3),
+                        measurement = c('mass', 'wing', 'tail'),
+                        value = c(34.5, 96.7, 107)
+)
+
+tidy1NFa <-
+  data.frame(id = rep(obs1, 3),
+             birdID = rep('1123-58132', 3),
+             observationDate = rep('2016-05-16', 3),
+             measurement = c('mass', 'wing', 'tail'),
+             value = c(34.5, 96.7, 107)
+  ) %>%
+  spread(measurement, value)
+
+# 1NF: All values are atomic
+
+badDate <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
+                        observationDate = c('2016-05-16, 2017-07-12', '2016-05-26', '2016-06-02, 2017-05-12')
+) %>% tbl_df
+
+# Fixed, but breaks the first rule
+
+tidy1NFb0 <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
+                        observationDate = c('2016-05-16,2017-07-12', '2016-05-26', '2016-06-02,2017-05-12')
+) %>% 
+  separate(observationDate, into = c('date1', 'date2'), sep = ',')
+
+tidy1NFb <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
+                       observationDate = c('2016-05-16,2017-07-12', '2016-05-26', '2016-06-02,2017-05-12')
+) %>% 
+  separate(observationDate, into = c('date1', 'date2'), sep = ',') %>%
+  gather(key = date, value = observationDate, -birdID, na.rm = TRUE) %>%
+  select(birdID, observationDate) %>%
+  mutate(id = c(obs1, obs2, obs3, obs4, obs5)) %>%
+  select(id, birdID:observationDate)
+
+# 1NF: No repeated groupings of columns
+
+messy1NFc <- data.frame(
+  id = c(obs1, obs2, obs3),
+  birdID = c('1123-58132', '1123-58133','1123-58134'), 
+  observationDate1 = c('2016-05-16', '2016-05-16', '2016-06-02'),
+  observationDate2 = c('2017-07-12', NA, '2017-05-12'),
+  mass1 = c(34.5, 35.7, 38.0),
+  mass2 = c(36.2, NA, 37.6)
+)
+
+exampleTidy1 <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
+                           observationDate1 = c('2016-05-16', '2016-05-16', '2016-06-02'),
+                           observationDate2 = c('2017-07-12', NA, '2017-05-12')) %>%
+  gather(date, observationDate, -birdID, na.rm = TRUE) %>%
+  select(-date) %>%
+  bind_cols(
+    data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
+               mass1 = c(34.5, 35.7, 38.0),
+               mass2 = c(36.2, NA, 37.6)
+    ) %>%
+      gather(massMeasure, mass, -birdID, na.rm = TRUE) %>%
+      select(-c(birdID, massMeasure))
+  ) %>%
+  mutate(id = c(obs1, obs2, obs3, obs4, obs5)) %>%
+  select(id, birdID:mass)
+
+# 2NF: All columns are unique to the primary key:
+
+messy2NF <- exampleTidy1 %>%
+  mutate(
+    site = c('apple','apple', 'avocado', 'apple', 'avocado'),
+    canopyCover = c(32.5, 32.5, 78.4, 32.5, 78.4)
+  ) %>%
+  select(id, birdID, observationDate, site, canopyCover, mass)
+
+tidy2NFobsLevel <- messy2NF %>%
+  select(id, birdID, site, observationDate, mass)
+
+siteId1 <- generateObservationID()
+siteId2 <- generateObservationID()
+
+tidy2NFsiteLevel <- messy2NF %>%
+  select(site, canopyCover) %>%
+  distinct %>%
+  transmute(id = c(siteId1, siteId2), site, canopyCover)
+
+# 3NF: 
+
+messy3NF1 <- exampleTidy1 %>%
+  mutate(yearBanded = c(2016, 2015, 2016, 2016, 2016))
+
+exampleTidy1
+
+# Putting it all together (exercise):
+
+exercise1messy <- messy2NF %>%
+  mutate(
+    hTemp = c(22.2, 22.2, 26.8, 31.0, 18.7),
+    siteXY = case_when(
+      site == 'apple' ~ '-77.048, 38.925',
+      site == 'avocado' ~ '-77.053, 38.929'
+    ),
+    species = case_when(
+      birdID %in% c('1123-58132', '1123-58133') ~ 'NOCA',
+      birdID %in% '1123-58134' ~ 'GRCA'
+    )
+  ) %>%
+  rename(date = observationDate, canopy = canopyCover, spp = species)
 
 
