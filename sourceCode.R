@@ -308,4 +308,36 @@ exercise1messy <- messy2NF %>%
   ) %>%
   rename(date = observationDate, canopy = canopyCover, spp = species)
 
+# also ----
+
+gitSite <- 'https://raw.githubusercontent.com/bsevansunc/rWorkshop/master/'
+
+dirtyBirdURL <- getURL(paste0(gitSite, 'dirtyBirdData','.csv'))
+
+dirtyBandingURL <- getURL(paste0(gitSite, 'dirtyBandingData','.csv'))
+
+dirtyResightURL <- getURL(paste0(gitSite, 'dirtyResightData','.csv'))
+
+dirtyBird <- read_csv(dirtyBirdURL)
+
+dirtyBanding <- read_csv(dirtyBandingURL)
+
+dirtyResight <- read_csv(dirtyResightURL)
+
+dfWide <- data.frame(
+  subject = c('A', 'B', 'C'),
+  mass2016 = c(13.2, 14.6, 27.1),
+  mass2017 = c(26.4, 15.2, 31.3)
+)
+
+dfLong <- dfWide %>%
+  gather(key = year,
+         value = value,
+         mass2016:mass2017) %>%
+  mutate(year = str_replace_all(year, 'mass', ''))
+
+
+
+
+
 
