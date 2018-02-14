@@ -181,6 +181,23 @@ exampleMatrix <- sample(1:5, 60, replace = TRUE) %>%
 
 treatmentVector <- sample(letters[1:2], 10, replace = TRUE)
 
+options(stringsAsFactors = FALSE)
+
+generateObservationID <- function(){
+  n1 <- sample(100:999,1)
+  l1 <- sample(letters,1)
+  n2 <- sample(1000:9999, 1)
+  l2 <- sample(letters, 1)
+  paste0(l1, n1, '-', n2, l2)
+}
+
+obs1 <- generateObservationID()
+obs2 <- generateObservationID()
+obs3 <- generateObservationID()
+obs4 <- generateObservationID()
+obs5 <- generateObservationID()
+obs6 <- generateObservationID()
+
 # 1NF:  Each row is an observation:
 
 messy1NFa <- data.frame(id = obs1,
