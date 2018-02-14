@@ -336,8 +336,16 @@ dfLong <- dfWide %>%
          mass2016:mass2017) %>%
   mutate(year = str_replace_all(year, 'mass', ''))
 
+messyBander <- exampleTidy1 %>%
+  mutate(
+    site = c('apple','apple', 'avocado', 'apple', 'avocado'),
+    canopyCover = c(32.5, 32.5, 78.4, 32.5, 78.4)
+  ) %>%
+  select(id, birdID, observationDate, site, canopyCover, mass)
 
 
+someMessyData <- exercise1messy %>%
+  select(-hTemp)
 
 
 
