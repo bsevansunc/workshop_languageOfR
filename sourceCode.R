@@ -232,7 +232,7 @@ tidy1NFb <- tidy1NFb0 %>%
 
 # 1st normalization rule, No repeated groupings of columns:
 
-mess1NFc <- tidy1NFb0 %>%
+messy1NFc <- tidy1NFb0 %>%
   rename(observationDate1 = date1, observationDate2 = date2) %>%
   mutate(
     mass1 = c(34.5, 35.7, 38.0),
