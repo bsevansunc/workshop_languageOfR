@@ -355,6 +355,8 @@ sourceURL <- getURL(migBirdsUrl)
 
 eval(parse(text = sourceURL))
 
+birdCounts <- birdCounts %>%
+  mutate(foragingDiet = paste(foraging, diet, sep = '_'))
 
 #=================================================================================*
 # ---- other object classes ----
