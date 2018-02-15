@@ -2,7 +2,8 @@
 # ---- functions ----
 #=================================================================================*
 
-# Function searches packages in installed package list, adds them if you don't have them, and loads the library:
+# Function searches packages in installed package list, adds them if you don't
+# have them, and loads the library:
 
 smartLibrary <- function(packageVector){
   for(i in 1:length(packageVector)){
@@ -68,10 +69,8 @@ select <- dplyr::select
 url <- 'https://raw.githubusercontent.com/bsevansunc/workshop_languageOfR/master'
 
 #=================================================================================*
-# ---- data ----
-#=================================================================================*
 # ---- vectors ----
-#---------------------------------------------------------------------------------*
+#=================================================================================*
 
 # Some vectors:
 
@@ -96,9 +95,9 @@ exampleFactorLabels <- factor(
 
 numericVector <- fibFun(c(1,1), 4)
 
-#---------------------------------------------------------------------------------*
+#=================================================================================*
 # ---- data frames ----
-#---------------------------------------------------------------------------------*
+#=================================================================================*
 
 # Dummy data frame:
 
@@ -118,10 +117,6 @@ irisTbl <- tbl_df(iris) %>%
     species = Species
   )
 
-# World Health Organization's population dataset:
-
-population
-
 # Bird point count data:
 
 birdCounts <- readGit_csv(url, 'birdCounts.csv')
@@ -139,12 +134,20 @@ birdRichness <- birdCounts %>%
   mutate(area = sample(1:20, 10, replace = TRUE)) %>%
   select(site, area)
 
+#---------------------------------------------------------------------------------*
+# ---- lesson 4 ----
+#---------------------------------------------------------------------------------*
+
+# Motor trend car facts:
+
 motorTrend <- mtcars %>%
   mutate(model = rownames(mtcars)) %>%
   slice(-c(2, 4, 6, 26, 27, 29)) %>%
   separate(model, sep = ' ', into = c('make', 'model')) %>%
   arrange(make, model) %>%
   select(make, model, mpg:carb)
+
+# States in 1975:
 
 states1975 <- data_frame(
   region = state.region,
@@ -153,6 +156,9 @@ states1975 <- data_frame(
   area = state.area,
   population = state.x77[, 'Population']
 )
+
+# World Health Organization's population dataset:
+
 
 whoPopulation <- population
 
@@ -167,21 +173,8 @@ origins <- starwars %>%
   filter(name %in% measurements$name)
 
 #---------------------------------------------------------------------------------*
-# ---- other object classes ----
+# ---- lesson 5 ----
 #---------------------------------------------------------------------------------*
-
-# Example matrix objects:
-
-m <- matrix(fibFun(c(1,1), 6), ncol = 2)
-
-exampleMatrix <- sample(1:5, 60, replace = TRUE) %>%
-  matrix(ncol = 3, byrow = TRUE)
-
-# Add a treatment vector the matrix after converting to a data frame:
-
-treatmentVector <- sample(letters[1:2], 10, replace = TRUE)
-
-options(stringsAsFactors = FALSE)
 
 generateObservationID <- function(){
   n1 <- sample(100:999,1)
@@ -191,81 +184,71 @@ generateObservationID <- function(){
   paste0(l1, n1, '-', n2, l2)
 }
 
-obs1 <- generateObservationID()
-obs2 <- generateObservationID()
-obs3 <- generateObservationID()
-obs4 <- generateObservationID()
-obs5 <- generateObservationID()
-obs6 <- generateObservationID()
+obs <- vector('character', length = 5)
 
-# 1NF:  Each row is an observation:
+birdIds <- c('1123-58132', '1123-58133', '1123-58134')
 
-messy1NFa <- data.frame(id = obs1,
-                        birdID = rep('1123-58132', 3), 
-                        observationDate = rep('2016-05-16', 3),
-                        measurement = c('mass', 'wing', 'tail'),
-                        value = c(34.5, 96.7, 107)
+for(i in seq_along(obs)){
+  obs[i] <- generateObservationID()
+} 
+
+# 1st normalization rule, Each row is an observation:
+
+messy1NFa <- data.frame(
+  id = obs[1],
+  birdID = '1123-58132',
+  observationDate = '2016-05-16',
+  measurement = c('mass', 'wing', 'tail'),
+  value = c(34.5, 96.7, 107)
 )
 
-tidy1NFa <-
-  data.frame(id = rep(obs1, 3),
-             birdID = rep('1123-58132', 3),
-             observationDate = rep('2016-05-16', 3),
-             measurement = c('mass', 'wing', 'tail'),
-             value = c(34.5, 96.7, 107)
-  ) %>%
+# 1st normalization rule, Each row is an observation, fixed:
+
+tidy1NFa <- messy1NFa %>% 
   spread(measurement, value)
 
-# 1NF: All values are atomic
+# 1st normalization rule, All values are atomic
 
-badDate <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
-                        observationDate = c('2016-05-16, 2017-07-12', '2016-05-26', '2016-06-02, 2017-05-12')
-) %>% tbl_df
+badDate <-
+  data.frame(
+    birdID = c('1123-58132', '1123-58133', '1123-58134'),
+    observationDate = c(
+      '2016-05-16, 2017-07-12',
+      '2016-05-26',
+      '2016-06-02, 2017-05-12'
+    )
+  )
 
-# Fixed, but breaks the first rule
+# 1st normalization rule, All values are atomic, fixed but breaks part a:
 
-tidy1NFb0 <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
-                        observationDate = c('2016-05-16,2017-07-12', '2016-05-26', '2016-06-02,2017-05-12')
-) %>% 
-  separate(observationDate, into = c('date1', 'date2'), sep = ',')
+tidy1NFb0 <- badDate %>% 
+  separate(observationDate, into = c('date1', 'date2'), sep = ', ')
 
-tidy1NFb <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
-                       observationDate = c('2016-05-16,2017-07-12', '2016-05-26', '2016-06-02,2017-05-12')
-) %>% 
-  separate(observationDate, into = c('date1', 'date2'), sep = ',') %>%
-  gather(key = date, value = observationDate, -birdID, na.rm = TRUE) %>%
-  select(birdID, observationDate) %>%
-  mutate(id = c(obs1, obs2, obs3, obs4, obs5)) %>%
-  select(id, birdID:observationDate)
+# 1st normalization rule, All values are atomic, fixed:
 
-# 1NF: No repeated groupings of columns
+tidy1NFb <- tidy1NFb0 %>%
+  gather(tmp, date, date1:date2, -birdID, na.rm = TRUE) %>%
+  select(-tmp)
 
-messy1NFc <- data.frame(
-  id = c(obs1, obs2, obs3),
-  birdID = c('1123-58132', '1123-58133','1123-58134'), 
-  observationDate1 = c('2016-05-16', '2016-05-16', '2016-06-02'),
-  observationDate2 = c('2017-07-12', NA, '2017-05-12'),
-  mass1 = c(34.5, 35.7, 38.0),
-  mass2 = c(36.2, NA, 37.6)
+# 1st normalization rule, No repeated groupings of columns:
+
+mess1NFc <- tidy1NFb0 %>%
+  rename(observationDate1 = date1, observationDate2 = date2) %>%
+  mutate(
+    mass1 = c(34.5, 35.7, 38.0),
+    mass2 = c(36.2, NA, 37.6)
+  )
+
+# 1st normalization rule, No repeated groupings of columns, fixed:
+
+exampleTidy1 <- data.frame(
+  id = obs,
+  birdID = c(birdIds[1:3], birdIds[1],birdIds[3]),
+  observationDate = c('2016-05-16','2016-05-16','2016-06-02','2017-07-12','2017-05-12'),
+  mass = c(34.5,35.7,38.0,36.2,37.6)
 )
 
-exampleTidy1 <- data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
-                           observationDate1 = c('2016-05-16', '2016-05-16', '2016-06-02'),
-                           observationDate2 = c('2017-07-12', NA, '2017-05-12')) %>%
-  gather(date, observationDate, -birdID, na.rm = TRUE) %>%
-  select(-date) %>%
-  bind_cols(
-    data.frame(birdID = c('1123-58132', '1123-58133','1123-58134'), 
-               mass1 = c(34.5, 35.7, 38.0),
-               mass2 = c(36.2, NA, 37.6)
-    ) %>%
-      gather(massMeasure, mass, -birdID, na.rm = TRUE) %>%
-      select(-c(birdID, massMeasure))
-  ) %>%
-  mutate(id = c(obs1, obs2, obs3, obs4, obs5)) %>%
-  select(id, birdID:mass)
-
-# 2NF: All columns are unique to the primary key:
+# 2nd normalization rule, All columns are unique to the primary key:
 
 messy2NF <- exampleTidy1 %>%
   mutate(
@@ -274,23 +257,30 @@ messy2NF <- exampleTidy1 %>%
   ) %>%
   select(id, birdID, observationDate, site, canopyCover, mass)
 
+# 2nd normalization rule, All columns are unique to the primary key, fixed:
+
+siteIds <- vector('character', length = 2)
+
+for(i in seq_along(siteIds)){
+  siteIds[i] <- generateObservationID()
+}
+
+# 2nd normalization rule, fixed table 1 (bird observation level): 
+
 tidy2NFobsLevel <- messy2NF %>%
   select(id, birdID, site, observationDate, mass)
 
-siteId1 <- generateObservationID()
-siteId2 <- generateObservationID()
+# 2nd normalization rule, fixed table 2 (site level): 
 
 tidy2NFsiteLevel <- messy2NF %>%
   select(site, canopyCover) %>%
   distinct %>%
-  transmute(id = c(siteId1, siteId2), site, canopyCover)
+  transmute(id = c(siteIds[1], siteIds[2]), site, canopyCover)
 
-# 3NF: 
+# 3rd normalization rule, All columns are non-transitive:
 
 messy3NF1 <- exampleTidy1 %>%
-  mutate(yearBanded = c(2016, 2015, 2016, 2016, 2016))
-
-exampleTidy1
+  mutate(observationYear = lubridate::year(observationDate))
 
 # Putting it all together (exercise):
 
@@ -308,7 +298,42 @@ exercise1messy <- messy2NF %>%
   ) %>%
   rename(date = observationDate, canopy = canopyCover, spp = species)
 
-# also ----
+# Data frames for reshaping data:
+
+dfWide <- data.frame(
+  subject = c('A', 'B', 'C'),
+  mass2016 = c(13.2, 14.6, 27.1),
+  mass2017 = c(26.4, 15.2, 31.3)
+)
+
+dfLong <- dfWide %>%
+  gather(key = year,
+         value = value,
+         mass2016:mass2017) %>%
+  mutate(year = str_replace_all(year, 'mass', ''))
+
+dfTooLong <- data.frame(
+  id = obs[1],
+  birdID = rep('1123-58132', 3),
+  observationDate = rep('2016-05-16', 3),
+  measurement = c('mass', 'wing', 'tail'),
+  value = c(34.5, 96.7, 107)
+)
+
+messyBander <- exampleTidy1 %>%
+  mutate(
+    site = c('apple','apple', 'avocado', 'apple', 'avocado'),
+    canopyCover = c(32.5, 32.5, 78.4, 32.5, 78.4)
+  ) %>%
+  select(id, birdID, observationDate, site, canopyCover, mass)
+
+someMessyData <- exercise1messy %>%
+  select(-hTemp) %>%
+  slice(-5)
+
+#---------------------------------------------------------------------------------*
+# ---- lesson 5, homework ----
+#---------------------------------------------------------------------------------*
 
 gitSite <- 'https://raw.githubusercontent.com/bsevansunc/rWorkshop/master/'
 
@@ -324,28 +349,27 @@ dirtyBanding <- read_csv(dirtyBandingURL)
 
 dirtyResight <- read_csv(dirtyResightURL)
 
-dfWide <- data.frame(
-  subject = c('A', 'B', 'C'),
-  mass2016 = c(13.2, 14.6, 27.1),
-  mass2017 = c(26.4, 15.2, 31.3)
-)
-
-dfLong <- dfWide %>%
-  gather(key = year,
-         value = value,
-         mass2016:mass2017) %>%
-  mutate(year = str_replace_all(year, 'mass', ''))
-
-messyBander <- exampleTidy1 %>%
-  mutate(
-    site = c('apple','apple', 'avocado', 'apple', 'avocado'),
-    canopyCover = c(32.5, 32.5, 78.4, 32.5, 78.4)
-  ) %>%
-  select(id, birdID, observationDate, site, canopyCover, mass)
-
-
 someMessyData <- exercise1messy %>%
   select(-hTemp)
+
+#=================================================================================*
+# ---- other object classes ----
+#=================================================================================*
+
+# Example matrix objects:
+
+m <- matrix(fibFun(c(1,1), 6), ncol = 2)
+
+exampleMatrix <- sample(1:5, 60, replace = TRUE) %>%
+  matrix(ncol = 3, byrow = TRUE)
+
+# Add a treatment vector the matrix after converting to a data frame:
+
+treatmentVector <- sample(letters[1:2], 10, replace = TRUE)
+
+options(stringsAsFactors = FALSE)
+
+
 
 
 
