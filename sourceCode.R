@@ -349,8 +349,12 @@ dirtyBanding <- read_csv(dirtyBandingURL)
 
 dirtyResight <- read_csv(dirtyResightURL)
 
-someMessyData <- exercise1messy %>%
-  select(-hTemp)
+migBirdsUrl <-
+  'https://raw.githubusercontent.com/SCBI-MigBirds/MigBirds/master/source/sourceDataManip.R'
+sourceURL <- getURL(migBirdsUrl)
+
+eval(parse(text = sourceURL))
+
 
 #=================================================================================*
 # ---- other object classes ----
