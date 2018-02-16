@@ -335,32 +335,38 @@ someMessyData <- exercise1messy %>%
 # ---- lesson 5, homework ----
 #---------------------------------------------------------------------------------*
 
-gitSite <- 'https://raw.githubusercontent.com/bsevansunc/rWorkshop/master/'
+# gitSite <- 'https://raw.githubusercontent.com/bsevansunc/rWorkshop/master/'
 
-dirtyBirdURL <- getURL(paste0(gitSite, 'dirtyBirdData','.csv'))
-
-dirtyBandingURL <- getURL(paste0(gitSite, 'dirtyBandingData','.csv'))
-
-dirtyResightURL <- getURL(paste0(gitSite, 'dirtyResightData','.csv'))
-
-dirtyBird <- read_csv(dirtyBirdURL)
-
-dirtyBanding <- read_csv(dirtyBandingURL)
-
-dirtyResight <- read_csv(dirtyResightURL)
-
-migBirdsUrl <-
-  'https://raw.githubusercontent.com/SCBI-MigBirds/MigBirds/master/source/sourceDataManip.R'
-
-pointCounts <- left_join(birdCounts, birdHabits, by = 'species') %>%
-  mutate(foragingClass = paste(foraging, diet, sep = '_')) %>%
-  select(site, species, foragingClass, count) %>%
-  rowwise() %>%
-  mutate(date = sample(1:2, 1))
-
-# sourceURL <- getURL(migBirdsUrl)
+# dirtyBirdURL <- getURL(paste0(gitSite, 'dirtyBirdData','.csv'))
 # 
-# eval(parse(text = sourceURL))
+# dirtyBandingURL <- getURL(paste0(gitSite, 'dirtyBandingData','.csv'))
+# 
+# dirtyResightURL <- getURL(paste0(gitSite, 'dirtyResightData','.csv'))
+# 
+# dirtyBird <- read_csv(dirtyBirdURL)
+# 
+# dirtyBanding <- read_csv(dirtyBandingURL)
+# 
+# dirtyResight <- read_csv(dirtyResightURL)
+# 
+# pointCounts <- left_join(birdCounts, birdHabits, by = 'species') %>%
+#   mutate(foragingClass = paste(foraging, diet, sep = '_')) %>%
+#   select(site, species, foragingClass, count) %>%
+#   rowwise() %>%
+#   mutate(date = sample(1:2, 1))
+
+untidyFrame <- data.frame(subject = c('A','B','C'), 
+                          treatmentA = c(1.3, 2.3, 3.1), 
+                          treatmentB = c(2.9, 3.2, 4.6))
+
+wideFrame <- data.frame(species = c('amro', 'carw', 'grca'),
+                        d10 = c(0,0,1),
+                        d20 = c(1,1,0), 
+                        d30 = c(0,0,0))
+
+longFrame <- data.frame(site = c('site1', 'site2' ,'site2',rep('site3',3)),
+                        species = c('amro', c('carw','grca'), 'amro','carw','grca'),
+                        count = c(1,1,2, 5, 1, 2))
 
 badBandingRecord <- exampleTidy1 %>%
   mutate(
