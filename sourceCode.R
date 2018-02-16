@@ -279,7 +279,7 @@ tidy2NFsiteLevel <- messy2NF %>%
 
 # 3rd normalization rule, All columns are non-transitive:
 
-messy3NF1 <- exampleTidy1 %>%
+badYear <- exampleTidy1 %>%
   mutate(observationYear = lubridate::year(observationDate))
 
 # Putting it all together (exercise):
@@ -351,12 +351,23 @@ dirtyResight <- read_csv(dirtyResightURL)
 
 migBirdsUrl <-
   'https://raw.githubusercontent.com/SCBI-MigBirds/MigBirds/master/source/sourceDataManip.R'
-sourceURL <- getURL(migBirdsUrl)
 
-eval(parse(text = sourceURL))
+pointCounts <- left_join(birdCounts, birdHabits, by = 'species') %>%
+  mutate(foragingClass = paste(foraging, diet, sep = '_')) %>%
+  select(site, species, foragingClass, count) %>%
+  rowwise() %>%
+  mutate(date = sample(1:2, 1))
 
-birdCounts <- birdCounts %>%
-  mutate(foragingDiet = paste(foraging, diet, sep = '_'))
+# sourceURL <- getURL(migBirdsUrl)
+# 
+# eval(parse(text = sourceURL))
+
+badBandingRecord <- exampleTidy1 %>%
+  mutate(
+    site = c('apple','apple', 'avocado', 'apple', 'avocado'),
+    canopyCover = c(32.5, 32.5, 78.4, 32.5, 78.4)
+  ) %>%
+  select(id, birdID, observationDate, site, canopyCover, mass)
 
 #=================================================================================*
 # ---- other object classes ----
