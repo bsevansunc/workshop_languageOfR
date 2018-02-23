@@ -56,9 +56,7 @@ fibFun <- function(seed, howLong){
 
 smartLibrary('tidyverse')
 
-# Options:
-
-knitr::opts_chunk$set(echo = TRUE)
+library(lubridate)
 
 rename <- dplyr::rename
 
