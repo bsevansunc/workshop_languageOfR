@@ -122,3 +122,8 @@ irisTbl <- tbl_df(iris) %>%
     species = Species
   )
 
+#=================================================================================*
+# ---- remove unnecessary functions ----
+#=================================================================================*
+
+rm(list = c('url', 'fibFun', 'readGit_csv', 'smartLibrary', 'theme_add'))
