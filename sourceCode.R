@@ -54,9 +54,7 @@ fibFun <- function(seed, howLong){
 
 # Add packages:
 
-smartLibrary('tidyverse')
-
-library(lubridate)
+smartLibrary(c('tidyverse', 'lubridate', 'stringr'))
 
 rename <- dplyr::rename
 
