@@ -110,6 +110,8 @@ birdCounts <- readGit_csv(url, 'birdCounts.csv')
 
 birdHabits <- readGit_csv(url, 'birdHabits.csv')
 
+birdMeasures <- readGit_csv(url, 'bandingRecord.csv')
+
 
 # Tidy up iris:
 
